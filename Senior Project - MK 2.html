@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script type="text/javascript" charset="UTF-8" src="jquery-3.1.1.min.js" style=""></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SIIT Forms Distribution System</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<style>
+	.examplePanel01 {
+                background:   #555555;
+
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:200px;
+                width:200px;
+                position:relative;
+                left:20px;
+                top:20px;
+                
+                box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+            }
+	.examplePanel02 {
+                
+
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:200px;
+                width:50px;
+                position:relative;
+                left:230px;
+                top:-180px;
+                
+              
+
+            }
+	.examplePanel03 {
+                
+
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:20px;
+                width:200px;
+                position:relative;
+                left:20px;
+                top:-170px;
+                
+              
+
+            }
+	.status {
+                
+				background:  #7EFF57;
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:20px;
+                width:253px;
+                position:relative;
+                left:-26px;
+                top:-70px;
+                
+              
+
+            }
+	.hamAccess{
+                
+				background:  #40433F;
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:1000px;
+                width:350px;
+                position:absolute;
+				top:100px;
+                left:1500px;
+                
+              
+
+            }
+	.redText {
+                
+				background:  #FF4545;
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:20px;
+                width:253px;
+                position:relative;
+                left:26px;
+                
+                
+              
+
+            }
+	.greenText{
+                
+				background:  #999966;
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:20px;
+                width:253px;
+                position:relative;
+                left:26px;
+                
+                
+              
+
+            }
+			.easyAccessHeader{
+                
+				background:  #66ff33;
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:20px;
+                width:253px;
+                position:relative;
+                left:26px;
+                
+                
+              
+
+            }
+	.editorMode{
+                
+				background:  #66ff99;
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:20px;
+                width:253px;
+                position:relative;
+                left:26px;
+                
+                
+              
+
+            }
+	.blackHeader{
+                
+				background:  #000105;
+				padding: 40px 0;
+                
+				border-radius: 5px;
+                text-align: center;	
+               
+                width:75%;
+				
+				position:relative;
+				left:10%;
+				
+                
+                
+                
+              
+
+            }
+			
+	.leftNew{
+                
+				background:  #72a8ff;
+				padding: 150px 0;
+                
+				border-radius: 5px;
+                text-align: center;	
+               
+                width:30%;
+				
+				position:relative;
+				
+				left: 10%;
+				top:50px;
+
+                 transition: background 1s;
+                
+                
+              
+
+            }
+			
+	.leftNew:hover {
+				background:  #0a68ff;
+	}
+	.leftImport{
+                
+				background: #30ff4b;
+				padding: 50px 0;
+                
+				border-radius: 5px;
+                text-align: center;	
+				vertical-align: text-top;
+				
+                width:30%;
+				height:500px;
+				
+				position:relative;
+				
+				left: 10%;
+				top:50px;
+
+               
+                
+                
+              
+
+            }
+			
+	.rightExist1{
+                
+				background:  #ffc654;
+				padding: 150px 0;
+                
+				border-radius: 5px;
+                text-align: center;	
+               
+                width:25%;
+				
+				position:fixed;
+				
+				left: 57%;
+				top:31%;
+
+                 transition: background 1s;
+                
+                
+              
+
+            }
+			
+	.rightExist1:hover {
+				background:  #ffb31c;
+	}
+	.rightExist2{
+                
+				background: #fff31c;
+				padding: 50px 0;
+                
+				border-radius: 5px;
+                text-align: center;	
+				vertical-align: text-top;
+				
+                width:30%;
+				height:500px;
+				
+				position:fixed;
+				
+				left: 57%;
+				top:29%;
+             
+                
+                
+              
+
+            }
+	
+	</style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+		
+		<div id="tempDIv" style="display:none;"></div>
+
+		
+		
+		
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="">SIIT Form System</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu message-dropdown">
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>Napat Wongchotwiriyakit</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>Napat Wongchotwiriyakit</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>Napat Wongchotwiriyakit</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-footer">
+                            <a href="#">Read All New Messages</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu alert-dropdown">
+                        <li>
+                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">View All</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Napat Wongchotwiriyakit <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a id="nav-home"><i class="fa fa-fw fa-desktop"></i> Home</a>
+                    </li>
+                    
+                    <li>
+                        <a id="nav-newF"><i class="fa fa-fw fa-file"></i> Add New Forms</a>
+                    </li>
+					
+					<li>
+                        <a id="nav-Tut"><i class="fa fa-fw fa-wrench"></i> Tutorial</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+		<div id="mainContent">
+			<!--Home Page ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+			<div id="homePage" name="homePage">
+				<input type="image" id='merge' name="merge" src="myPic/merge.png" style='border-radius: 5px;width:60px;height:60px;left:30px;top:5px;position:relative;'  />
+				<table style="width:60%">
+				  <tr>
+					<!-- item01 Slots that can handle 9 file per package-->
+					<th>
+					<div id="Item01" class="item01">
+					</div>			
+					</th>
+					<!-- item02 -->
+					<th>
+					<div id="Item02" class="item02">
+					</div>
+					</th> 
+					<!-- item03 -->
+					<th>
+					<div id="Item03" class="item03">
+					</div>
+					</th> 
+				  </tr>
+				  
+				  <tr>
+				  <!-- item04 -->
+				  <th>
+					<div id="Item04" class="item04">
+					</div>
+				  </th>
+				  <!-- item05 -->
+				  <th>
+					<div id="Item05" class="item05">
+					</div>
+				  </th>
+				  <!-- item06 -->
+				  <th>
+					<div id="Item06" class="item06">
+					</div>
+				  </th>
+				  </tr>
+				  
+				  <tr>
+				  <!-- item07 -->
+				  <th>
+					<div id="Item07" class="item07">
+					</div>
+				  </th>
+				  <!-- item08 -->
+				  <th>
+					<div id="Item08" class="item08">
+					</div>
+				  </th>
+				  <!-- item09 -->
+				  <th>
+					<div id="Item09" class="item09">
+					</div>
+				  </th>
+				  </tr>
+				</table>
+				
+			</div>
+			<!-- end of Home Page ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+			<!-- Filling Page ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+			<div id="fillingPage" name="fillingPage">
+				<input type="image" id='backToFirst' name='backToFirst' src="myPic/previous.png" style='position:fixed;width:80px;height:80px;left:250px;top:90px'/>
+				<input type="image" id='admission_form_2' name="admission_form_2" src="myPic/Form_1.jpg" style='border-radius: 5px;width:800px;height:1000px;left:200px;top:50px;position:relative;text-align:;'  />
+				<input type="image" id='commentCheck' name='commentCheck' src="myPic/Comment.png" style='border-radius:20px;position:fixed;width:80px;height:80px;left:1400px;top:90px'/>
+				<textarea type="text" id='commentBox'name="commentBox" style='border-radius: 5px;width:260px;height:500px;left:1230px;top:100px;position:fixed;'></textarea>
+				<div id="hamAccess" class="hamAccess">
+					
+					<div id="easyAccessHeader" class="easyAccessHeader">Error</div>
+				</div>
+			</div>
+			<!-- End of Filling Page ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+			
+			
+			<!-- Editor Page ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+			<div id="editorPage" name="editorPage">
+				<!-- First Layer -->
+				&nbsp;
+				<div id="blackHeader" class="blackHeader" align="center"><font size="3" color="white">Editor Mode</font></div>
+				
+				<input type="image" id='leftNew' name="leftNew" class="leftNew" src=""/>
+				<input type="image" id='rightExist1' name="rightExist1" class="rightExist1" src=""/>
+				
+				<div id="leftImport" class="leftImport" >
+				
+					<h1>Pick a File</h1>
+					<input type="file" id="the-photo-file-field" style="position:relative;left:25%;">
+					<div id="preview">
+					<!--image will be inserted here-->
+					</div>
+					<div id="data" class="large-8 columns">
+						<h2 id="name"></h2>
+						<p id="size"></p>
+						<p id="type"></p>
+					</div>
+					
+				</div>
+				
+				<div id="rightExist2" class="rightExist2" >
+				
+					
+					
+				</div>
+				
+			</div>
+			<!-- End of Editor Page ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+		</div>
+    </div>
+
+    <script>
+	
+	$(document).ready(function(){
+		//----------------------------------------------------------------------
+		// Pre-Define Function Area
+		
+		
+		function clearPage() { 
+			$('#homePage').children().hide();
+			$('#fillingPage').children().hide();
+			$('#editorPage').children().hide();
+			
+			
+		}
+		//-------------------------------------Imported--------------
+		//check if browser supports file api and filereader features
+		if (window.File && window.FileReader && window.FileList && window.Blob) {
+			
+		   //this is not completely neccesary, just a nice function I found to make the file size format friendlier
+			//http://stackoverflow.com/questions/10420352/converting-file-size-in-bytes-to-human-readable
+			function humanFileSize(bytes, si) {
+				var thresh = si ? 1000 : 1024;
+				if(bytes < thresh) return bytes + ' B';
+				var units = si ? ['kB','MB','GB','TB','PB','EB','ZB','YB'] : ['KiB','MiB','GiB','TiB','PiB','EiB','ZiB','YiB'];
+				var u = -1;
+				do {
+					bytes /= thresh;
+					++u;
+				} while(bytes >= thresh);
+				return bytes.toFixed(1)+' '+units[u];
+			}
+
+
+		  //this function is called when the input loads an image
+			function renderImage(file){
+				var reader = new FileReader();
+				reader.onload = function(event){
+					the_url = event.target.result
+			  //of course using a template library like handlebars.js is a better solution than just inserting a string
+					$('#preview').html("<img style='width:150px;height:150px' src='"+the_url+"' />")
+					$('#name').html(file.name)
+					$('#size').html(humanFileSize(file.size, "MB"))
+					$('#type').html(file.type)
+				}
+			
+			//when the file is read it triggers the onload event above.
+				reader.readAsDataURL(file);
+			}
+
+		  
+		  //this function is called when the input loads a video
+			function renderVideo(file){
+				var reader = new FileReader();
+				reader.onload = function(event){
+					the_url = event.target.result
+			  //of course using a template library like handlebars.js is a better solution than just inserting a string
+			  $('#data-vid').html("<video width='400' controls><source id='vid-source' src='"+the_url+"' type='video/mp4'></video>")
+			   $('#name-vid').html(file.name)
+					$('#size-vid').html(humanFileSize(file.size, "MB"))
+					$('#type-vid').html(file.type)
+
+				}
+			
+			//when the file is read it triggers the onload event above.
+				reader.readAsDataURL(file);
+			}
+
+		  
+
+		  //watch for change on the 
+			$( "#the-photo-file-field" ).change(function() {
+				console.log("photo file has been chosen")
+				//grab the first image in the fileList
+				//in this example we are only loading one file.
+				console.log(this.files[0].size)
+				renderImage(this.files[0])
+
+			});
+		  
+			$( "#the-video-file-field" ).change(function() {
+				console.log("video file has been chosen")
+				//grab the first image in the fileList
+				//in this example we are only loading one file.
+				console.log(this.files[0].size)
+				renderVideo(this.files[0])
+
+			});
+
+		} else {
+
+		  alert('The File APIs are not fully supported in this browser.');
+
+		}
+		//-------------------------------------end of Imported--------------
+  
+		
+		//End of Pre-Define Function Area
+		//----------------------------------------------------------------------
+		//Initialized Fucntion Area
+
+		$('#nav-newF').click(function() //New function which lead to editor page
+			{
+				$('#editorPage').children().show();
+				$('#leftImport').hide();
+				$('#rightExist2').hide();
+			});
+			
+		$('#leftNew').click(function()	
+			{
+				  $( "#leftNew" ).fadeOut( "slow", function() {
+					// Animation complete.
+				  });
+				  setTimeout(function(){ $( "#leftImport" ).fadeIn( "slow", function() {
+					// Animation complete
+				  }); }, 1000);
+				  
+			});
+			
+		$('#rightExist1').click(function()	
+			{
+				$( "#rightExist1" ).fadeOut( "slow", function() {
+					// Animation complete.
+				  });
+				setTimeout(function(){ $( "#rightExist2" ).fadeIn( "slow", function() {
+					// Animation complete
+				  }); }, 1000);
+				  
+				  
+				setTimeout(function(){ 
+					console.log("loading.....");
+					//$('#tempDiv') //load Data from save file
+					$('#rightExist2').load("saveFile.txt");
+				 }, 1100);
+				 
+				 
+			});
+			
+			
+
+    
+        
+    
+
+		clearPage(); //Initialize the page
+		
+		//End of Initialized Fucntion Area
+		//----------------------------------------------------------------------
+		
+		
+		
+	});
+	
+	</script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+
+</body>
+
+</html>

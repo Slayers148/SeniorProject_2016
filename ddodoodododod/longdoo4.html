@@ -1,0 +1,712 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta content="initial-scale=1.0, user-scalable=no" name="viewport">
+        <meta charset="utf-8">
+        <title>Sub District Map</title>
+        <style type="text/css">.gm-style .gm-style-mtc label,.gm-style .gm-style-mtc div{font-weight:400}</style><style type="text/css">.gm-style-pbc{transition:opacity ease-in-out;background-color:black;text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}</style><link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}</style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400;text-decoration:none}.gm-style img{max-width:none}</style>
+       
+        <style>
+            body { margin: 0; padding: 0; font: 12px/1.2 Meiryo, Tahoma, sans-serif; }
+            #header { background: #2086f3; font-size: 30px; color: #ffffff; padding: 12px; }
+            #map { margin: 4px; }
+            #results {
+                position: absolute;
+                top: 0; bottom: 0;
+                left: 0;
+                width: 1px;
+                height: 80%;
+                margin: auto;
+                border: 4px solid #dddddd;
+                background: #ffffff;
+                overflow: auto; z-index: 2; display: none; }
+                
+            .sidepanel {
+                background:   #ffffff;
+
+
+                overflow-x: hidden;
+                overflow-y: hidden;
+
+                position:absolute;
+                
+                height:50px;
+                width:350px;
+                
+                top:48px;
+                left:0px;
+                z-index: 1;
+                
+                box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+            }
+            .sidepanelForADV {
+                background:   #ffffff;
+
+
+                overflow-x: hidden;
+                overflow-y: hidden;
+
+                position:absolute;
+                
+                height:620px;
+                width:350px;
+                
+                top:48px;
+                left:0px;
+                z-index: 1;
+                
+                box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+            }
+            .sidepanel2 {
+                background:#4d4d33;
+                width: 100%;
+                height: 50px;
+                position:absolute;
+                top:0px;
+                right:0px;
+                
+                z-index: 3;
+
+
+            }
+            .sidepanel2x2 {
+                background:#6f6f53;
+                width: 100%;
+                height: 50px;
+                position:absolute;
+                top:0px;
+                right:0px;
+                
+                z-index: 3;
+
+
+            }
+            .filterHolder {
+                background:#f0f5f5;
+                width: 100%;
+                height: 40%;
+/*                position:absolute;
+                top:0px;*/
+                z-index: 3;
+
+
+            }
+            .filterHolderHide {
+
+                background:#e0ebeb;
+                width: 100%;
+                height: 16%;
+/*                position:absolute;
+                top:0px;*/
+                z-index: 3;
+                
+
+            }
+            .productDetail {
+                border-radius: 5px;
+                padding: 1px; 
+                
+                min-width: 200px;
+                height: 55px;
+                color: #ffffff;
+                position: absolute;
+                left:100px;
+                bottom:13px;
+                vertical-align: middle;
+                text-align: center;
+                background: #4d4d33;
+            }
+            .product {
+                float: left;
+                position: relative;
+                width: 330px;
+                height: 80px;
+                margin: 0 5px;
+                padding: 0;
+                background: #ffffff;
+                
+            }
+            .product img {
+                width: 70px;
+                height:70px;
+            }
+
+            .product p {
+                visibility: hidden;
+            }
+            .product:hover p {
+                visibility: visible;
+                position: absolute;
+                width: 330px;
+                height: 80px;
+                top: 0;
+                margin: 0;
+                padding: 0;
+                line-height: 110px;
+                vertical-align: middle;
+                text-align: center;
+                color: #fff;
+                background-color: rgba(0,0,0,0.75);
+                transition: background .2s linear, color .2s linear;
+                -moz-transition: background .2s linear, color .2s linear;
+                -webkit-transition: background .2s linear, color .2s linear;
+                -o-transition: background .2s linear, color .2s linear;
+            }
+            .product2 {
+                float: left;
+                position: relative;
+                width: 330px;
+                height: 80px;
+                margin: 0 5px;
+                padding: 0;
+                background:#e0e0eb;
+            }
+            
+            .product2 img {
+                width: 70px;
+                height:70px;
+            }
+
+            .product2 p {
+                visibility: hidden;
+            }
+            .product2:hover p {
+                visibility: visible;
+                position: absolute;
+                width: 330px;
+                height: 80px;
+                top: 0;
+                margin: 0;
+                padding: 0;
+                line-height: 110px;
+                vertical-align: middle;
+                text-align: center;
+                color: #fff;
+                background-color: rgba(0,0,0,0.75);
+                transition: background .2s linear, color .2s linear;
+                -moz-transition: background .2s linear, color .2s linear;
+                -webkit-transition: background .2s linear, color .2s linear;
+                -o-transition: background .2s linear, color .2s linear;
+            }
+/*            .sunny, .cloudy, .rainy {
+                    display: block;
+                    margin: 30px auto 10px;
+                    width: 128px;
+                    height: 128px;
+                    background: url('../content/web/tabstrip/weather.png') transparent no-repeat 0 0;
+                }
+
+                .cloudy{
+                    background-position: -128px 0;
+                }
+
+                .rainy{
+                    background-position: -256px 0;
+                }
+
+                .weather {
+                    margin: 0 auto 30px;
+                    text-align: center;
+                }
+
+                #tabstrip h2 {
+                    font-weight: lighter;
+                    font-size: 5em;
+                    line-height: 1;
+                    padding: 0 0 0 30px;
+                    margin: 0;
+                }
+
+                #tabstrip h2 span {
+                    background: none;
+                    padding-left: 5px;
+                    font-size: .3em;
+                    vertical-align: top;
+                }
+
+                #tabstrip p {
+                    margin: 0;
+                    padding: 0;
+                }*/
+        </style>
+        
+        <script type="text/javascript" charset="UTF-8" src="https://code.jquery.com/jquery-2.2.4.min.js" style=""></script>
+        <link href="https://kendo.cdn.telerik.com/2016.2.504/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://kendo.cdn.telerik.com/2016.2.504/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://kendo.cdn.telerik.com/2016.2.504/styles/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://kendo.cdn.telerik.com/2016.2.504/styles/kendo.silver.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://kendo.cdn.telerik.com/2016.2.504/styles/kendo.dataviz.silver.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://kendo.cdn.telerik.com/2016.2.504/js/jquery.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2016.2.504/js/jszip.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2016.2.504/js/kendo.all.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2016.2.504/js/kendo.aspnetmvc.min.js"></script>
+        <script src="http://api.longdo.com/map/?key=99a0b9fe4778633502c60d29e0ef2966"></script>
+
+        <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<!--        <script src="multiple2.js"></script>-->
+
+        <!--        By people-->
+        <link rel="stylesheet" href="css/style2.css">
+        <link rel="stylesheet" href="css/bypeopleStyle.css">
+<!--        <div class="card card--big">
+            <div style="background-image: url(https://placeimg.com/640/480/nature)" class="card__image"></div></br>
+            <h2 class="card__title">?.#:tambon#</h2></br>
+            <span class="card__subtitle"> ?.#:province# ?.#:amphoe# ?.#:tambon#</span></br>
+            <p class="card__text">Province</p><div class="card__action-bar"></br>
+            <button onclick="map.location({ lon:'+oSelect.longitude+', lat: '+oSelect.latitude+' });" class="card__button"> Location </button></br>-->
+            
+        <script type="text/x-kendo-template" id="template1">
+            
+            <div class="product">
+            <img src="#= logo.src #" alt="" />
+            <div class="productDetail">Province.   #:province# <br/> 
+                                       District. &nbsp;&nbsp;&nbsp;#:amphoe# <br/> 
+                                       S.District. #:tambon# </div>
+            <p>Selecting #:tambon#</p>
+            
+            </div>
+        </script>
+
+        <script>
+            var dataSource = new kendo.data.DataSource({
+                schema: {
+                    data: "data",
+                    total: "total"
+                },
+                //sort: {field: "description", dir: "desc"},
+                pageSize: 20,
+                serverFiltering: true,
+                serverPaging: true,
+                transport: {
+                    read: function (options)
+                    {
+                        options.data.otherFields = "province,amphoe";
+                        options.data.pageCountQuery = '1';
+                        options.data.c = "mapInformation";
+                        // kendo.ui.progress($(".loading"), true);
+                        //console.log(options.data);
+                        socket.emit("master", options.data, function (data) {
+                            options.success(data);
+                        });
+                    }
+                }
+            });
+            var map;
+//            function getResultPanel() {
+//                var holder = document.getElementById('results');
+//                holder.style.display = 'block';
+//                return holder;
+//            }
+
+            function init() {
+                // กำหนดขนาดแผนที�?
+                resize();
+                window.addEventListener('resize', resize);
+
+                // สร้า�?แผนที�?
+                map = new longdo.Map({
+                    layer: [
+                        longdo.Layers.GRAY,
+                        longdo.Layers.TRAFFIC
+                    ],
+                    placeholder: document.getElementById('map'),
+                });
+                // ?????????????????????
+//                    setTimeout(map.Overlays.load, 1000, longdo.Overlays.events);
+//                    setTimeout(map.Overlays.load, 2000, longdo.Overlays.cameras);
+
+                    // ??????????????????????????????
+                    map.Route.placeholder(document.getElementById('content'));
+
+                    // ????????????????????? ?????????????????????????????
+                    map.Route.enableContextMenu();
+                    map.Route.auto(true);
+                  
+                map.Ui.Crosshair.visible(false);
+//                map.Search.placeholder(getResultPanel());
+
+                var marker1 = new longdo.Marker({
+                    lon: 99, lat: 14,
+                    detail: 'marker detail<br /><em>detail ex</em>',
+                    draggable: true
+                });
+
+
+                var marker2 = new longdo.Marker(
+                        {lon: 101.2, lat: 13.8},
+                        {
+                            title: 'Marker 2',
+                            icon: {
+                                url: '//map.longdo.com/sites/all/modules/longdomap_mobile/images/pin.png',
+                                urlHD: '//map.longdo.com/sites/all/modules/longdomap_mobile/images/pin-2x.png',
+                                offset: {x: 12, y: 42}
+                            },
+                            detail: 'marker detail<br /><em></em>',
+                        });
+                map.Overlays.add(marker2);
+
+
+                // map.setZoomBarPosition({"right":"10px", "top":"30px"});
+// 'default' or  {"left":"10px", "top":"30px"}
+                //map.Route.placeholder(getResultPanel());
+            }
+            var fnMark = function (oSelect)
+            {
+                console.log("fnMark Start");
+                console.log(oSelect);
+                
+
+                
+                var markerX = new longdo.Marker(
+                    {lon: oSelect.longitude, lat: oSelect.latitude},
+                    {
+                            title: oSelect.tambon,
+                            icon: {
+                                url: 'https://map.longdo.com/mmmap/images/pin_mark.png',
+                                urlHD: '//map.longdo.com/sites/all/modules/longdomap_mobile/images/pin-2x.png',
+                                offset: {x: 12, y: 42}
+                            },
+                            
+                            detail: '<div style="position:absolute;width:200px;"><img src='+oSelect.logo.src+' style="width:70px;height:70px;" ></div><div style="position:relative;width:200px;height:100px;"><div style="text-align: right;position:absolute;top:60px;left:10px;">'+ oSelect.province + ',' + oSelect.amphoe +   '<br/>' + oSelect.latitude +','+ oSelect.longitude+  '<br/>'+oSelect.url+'</div></div>',
+                });
+                map.Overlays.add(markerX);
+            };
+                    //position: {lat: parseFloat(oSelect.latitude), lng: parseFloat(oSelect.longitude)},
+//                    map: map,
+//                    title: 'VIEW',
+//                    id: oSelect.tamid
+//                });
+//                var temp = "<img width='100px' src='{3}'><br />?.{0} ?.{1} ?.{2} <br /> <a href='{4}' target='_blank' >???????</a>".format(oSelect.province, oSelect.amphoe, oSelect.tambon, oSelect.logo.src, oSelect.url);
+//                marker.addListener('click', function () {
+//                    var infowindow = new google.maps.InfoWindow({
+//                        content: temp,
+//                        id: marker.id
+//                    });
+//                    var check = true;
+//                    $.each(infoWindows, function (i, v) {
+//                        if (v.id == marker.id)
+//                        {
+//                            v.open(map, marker);
+//                            check = false;
+//                            return true;
+//                        }
+//                    });
+//                    if (check)
+//                    {
+//                        infoWindows.push(infowindow);
+//                        infowindow.open(map, marker);
+//                    }
+//                });
+            
+            function resize() {
+                var style = document.getElementById('map').style
+                style.height = (window.innerHeight - 10) + 'px';
+                style.width = (window.innerWidth - 8) + 'px';
+            }
+
+
+
+            $(document).ready(function () {
+                init();
+
+                setTimeout(function () {
+                    $(".ldmap_notice").hide();
+                }, 100)
+            });
+
+            var socket = io.connect("http://127.0.0.1:9999");
+        </script>
+    </head>
+    <body>
+        <div id="window">
+            <div id="grid"></div>
+        </div>
+        <div id="map"></div>
+
+
+<!--        Button section-->
+<!--            Show Search    //-->
+<div style="position: fixed;left:5px;top:350px; z-index: 4;"><input type="image" id='toggle-button' name="toggle-button" src="pic/search.png" stlye style='width:60px;height:60px;'  /></div>
+
+<!--<div id="results">-->
+<div id="tabstrip" style="position:absolute;
+                
+                top:60px;
+                left:80px;">
+    <ul>
+        <li class="k-state-active">
+            <div style="width:150px;"><div style=" z-index: 4;float: left;"><input type="image" id='adv-tab' name="adv-tab" src="pic/nomSearch.png"  style='width:40px;height:40px;' /></div> <div style="float: right;position:relative;right:15px;top:13px;">NormalSearch</div></div>
+        </li>
+        <li>
+            
+            <div style="width:150px;"><div style=" z-index: 4;float: left;"><input type="image" id='adv-tab' name="adv-tab" src="pic/advSearch.png"  style='width:40px;height:40px;' /></div> <div style="float: right;position:relative;right:10px;top:13px;">Advance Search</div></div>
+            
+        </li>
+
+    </ul>
+    <div>
+<!--    <span class="rainy">NM Search</span>-->
+    <div id="sidepanel" class="sidepanel">
+<!--                    Hide Search    //-->
+<div style="position: fixed;left:385px;top:114px; z-index: 4;"><input type="image" id='toggle-button2' name="toggle-button2" src="pic/previous.png" stlye style='width:37px;height:37px;'  /></div>
+
+<!--                    Table    //-->
+<div style="position: fixed;left:335px;top:114px; z-index: 4;"><input type="image" id='toggle-table-open' name="toggle-table-open" src="pic/table2.png" stlye style='width:37px;height:37px;'  /></div>
+<!--            show adv search    //
+<div style="position: fixed;left:385px;top:165px; z-index: 4;"><input type="image" id='toggle-adv-show' name="toggle-adv-show" src="pic/advSearch.png" stlye style='width:40px;height:40px;'  /></div>
+            hide adv search    //
+<div style="position: fixed;left:385px;top:275px; z-index: 4;"><input type="image" id='toggle-adv-hide' name="toggle-adv-hide" src="pic/advSearch.png" stlye style='width:40px;height:40px;'  /></div>-->
+
+        <div id="sidepanel2" class="sidepanel2">
+            <div id="searchIcon" style="position:absolute;bottom:4px;left:5px;">
+                <img src='pic/search.png' style='width:35px;height:35px;' >
+            </div>
+            <div id="searchContainer" class="searchContainer" style="position:absolute;bottom:13px;left:45px;width:100px;">
+
+                <input  type="text" placeholder="" name="searchValue" id="searchValue" size="40">
+            </div>
+
+        </div>
+
+
+        <div id="filterHolder" class="filterHolder">
+        </div>
+        <div id="filterHolderHide" class="filterHolderHide">
+        </div>
+        <div id="itemListHolder" >
+            <div id="itemList" style="overflow-y: scroll;max-height: 520px;">
+            </div>
+        </div>
+        </div>
+    </div>
+    <div>
+        <div id="sidepanelForADV" class="sidepanelForADV">
+
+            <div id="sidepanel2x2" class="sidepanel2x2">
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+    </div>
+    <script>
+    //initial these 3 must not be presented
+    
+    
+    
+    
+    $('#toggle-button').toggle();
+    $('#filterHolder').toggle();   
+    $('#toggle-adv-hide').toggle();
+    
+
+    
+    //button section
+                //bring back search
+    $('#toggle-button').click(function()
+                {   
+//                    $('#sidepanel').show();  
+                    $('#tabstrip').show();
+//                    $('#toggle-button').hide();
+//                    $('#toggle-button2').show();
+//                    $('#toggle-table-open').show();
+//                    $('#toggle-adv-show').show();
+//                    $('#toggle-adv-hide').hide();
+                })
+    $('#toggle-table-open').click(function()
+                {               
+                    dialog.center().open();
+                    dialog.maximize();
+                });
+                //arrow
+    $('#toggle-button2').click(function()
+                {   
+//                    $('#sidepanel').hide();
+                      $('#tabstrip').hide();
+                      $('#toggle-button').show();
+//                    $('#toggle-button2').hide();
+//                    $('#toggle-table-open').hide();
+//                    $('#toggle-adv-show').hide();
+//                    $('#toggle-adv-hide').hide();
+                    
+                });
+//    $('#toggle-adv-show').click(function()
+//                {   
+//                    $('#filterHolder').toggle();
+//                    $('#filterHolderHide').toggle();
+//                    $('#toggle-adv-show').hide();
+//                    $('#toggle-adv-hide').show();
+//                    
+//                });
+//    $('#toggle-adv-hide').click(function()
+//                {   
+//                    $('#filterHolder').hide();
+//                    $('#filterHolderHide').show();
+//                    $('#toggle-adv-show').show();
+//                    $('#toggle-adv-hide').hide();
+//                    
+//                }); 
+    $(document).ready(function() {
+                    $("#tabstrip").kendoTabStrip({
+                        animation:  {
+                            open: {
+                                effects: "instant"
+                            }
+                        }
+                    });
+                });
+    dialog = $("#window").kendoWindow({
+        width: "600px",
+        title: "Table",
+        visible: false,
+        actions: [
+            // "Pin",
+            // "Minimize",
+            // "Maximize",
+            "Close"
+        ],
+        //close: onClose
+    }).data("kendoWindow");
+    $("#grid").kendoGrid({
+        dataSource: dataSource,
+        height: 550,
+        filterable: {
+            mode: "row"
+        },
+        pageable: true,
+        columns:
+                [//oSelect.province, oSelect.amphoe, oSelect.tambon, oSelect.logo.src, oSelect.url
+
+                    {
+                        field: "url",
+                        title: " Logo ",
+                        width: 55,
+                        template: '<img src="#=logo.src#" width="50px">',
+                        filterable: false
+                    },
+                    {
+                        field: "province",
+                        title: "Province",
+                        width: 225,
+                        filterable: {
+                            cell: {
+                                operator: "contains"
+                            }
+                        }
+                    },
+                    {
+                        field: "amphoe",
+                        title: "District",
+                        width: 225,
+                        filterable: {
+                            cell: {
+                                operator: "contains"
+                            }
+                        }
+                    },
+                    {
+                        field: "tambon",
+                        title: "S.District",
+                        width: 225,
+                        filterable: {
+                            cell: {
+                                operator: "contains"
+                            }
+                        }
+                    },
+                    {
+                        field: "url",
+                        title: "URL",
+                        width: 225,
+                        template: '<a href="#=url#">Link</a>',
+                        filterable: false
+                    },
+                    //
+                    /* {
+                     field: "ShipName",
+                     width: 500,
+                     title: "Ship Name",
+                     filterable: {
+                     cell: {
+                     operator: "contains"
+                     }
+                     }
+                     }, {
+                     field: "Freight",
+                     width: 255,
+                     filterable: {
+                     cell: {
+                     operator: "gte"
+                     }
+                     }
+                     }, {
+                     field: "OrderDate",
+                     title: "Order Date",
+                     format: "{0:MM/dd/yyyy}"
+                     }
+                     */
+                ]
+    }); 
+    
+    setTimeout(function () {
+        $("#searchValue").kendoComboBox({
+            placeholder: "",
+            dataTextField: "tambon",
+            dataValueField: "tambon",
+            filter: "contains",
+            autoBind: false,
+            minLength: 0,
+            
+            
+
+            dataSource: dataSource,
+            template: '#= province #,#= amphoe #,#= tambon #',
+             
+           change: function (e) {
+                $("#sidepanel" ).css( "height", "620" );
+                oSelect = dataSource.data()[this.select()];
+                
+                console.log(oSelect)
+
+                $('#itemList').empty();
+                buttonCount = 0;
+                //$("#itemList").append('<div class="card card--big"><div style="background-image: url(https://placeimg.com/640/480/nature)" class="card__image"></div><h2 class="card__title">#'+ buttonCount + " " + oSelect.tambon + '</h2><span class="card__subtitle">' + oSelect.province + ',' + oSelect.amphoe + '</span><p class="card__text">Province</p><div class="card__action-bar"><button onclick="map.location({ lon:'+oSelect.longitude+', lat: '+oSelect.latitude+' });" class="card__button">Click for Location</button></div>');
+                            ;
+                map.location({ lon:oSelect.longitude, lat: oSelect.latitude });
+                
+                fnMark(oSelect);
+                
+
+                    //console.log(" T af first loop : "+TcolPicker);
+                    $("#itemList").kendoListView({
+                        dataSource: dataSource,
+                        selectable:true,
+                        template: kendo.template($("#template1").html()),
+                        change: function (a, b, c, d) {
+
+
+                            var oSelect2 = dataSource.data()[this.select()];
+                            var data = dataSource.data(),
+                                    selected = $.map(this.select(), function (item) {
+                                        return data[$(item).index()];
+                                    });
+                            fnMark(selected[0]);
+                            map.location({ lon:selected[0].longitude, lat:selected[0].latitude });
+
+                        }
+                    });
+                    
+                
+            }
+        });
+    }, 100);
+    </script>
+    </body>
+</html>
