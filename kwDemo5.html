@@ -1,0 +1,2719 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<script type="text/javascript" charset="UTF-8" src="html2canvas.js" style=""></script>
+	<script type="text/javascript" charset="UTF-8" src="jquery-3.1.1.min.js" style=""></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta http-equiv="pragma" content="no-cache" />
+
+    <title>SIIT Forms Distribution System</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<style>
+	.containerPanel{
+	 background: #bcbcbc;
+	 border-color: grey;
+	 border-style: solid;
+	 border-width: 1px;
+	 border-radius: 5px;
+	 width: 200px;
+	 height: 650px;
+	 position: fixed;
+	 left: 79.5%;
+	 top: 20%;
+
+
+	}
+	.examplePanel01 {
+                background:   #555555;
+
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:200px;
+                width:200px;
+                position:relative;
+                left:20px;
+                top:20px;
+                
+                box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+            }
+	.examplePanel02 { 
+                
+
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:200px;
+                width:50px;
+                position:relative;
+                left:230px;
+                top:-180px;
+                
+              
+
+            }
+	.examplePanel03 {
+                
+
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:20px;
+                width:200px;
+                position:relative;
+                left:20px;
+                top:-170px;
+                
+              
+
+            }
+	.status {
+                
+				background:  #fc2836;
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:20px;
+                width:253px;
+                position:relative;
+                left:-26px;
+                top:-70px;
+                
+              
+
+            }
+	.hamAccess{
+                
+				background:  #40433F;
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                
+                width:300px;
+                position:absolute;
+				top:100px;
+                left:80%;
+                
+              
+
+            }
+	.redText {
+                
+				background:  #FF4545;
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:20px;
+                width:253px;
+                position:relative;
+                left:26px;
+                
+                
+              
+
+            }
+	.greenText{
+                
+				background:  #999966;
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:20px;
+                width:253px;
+                position:relative;
+                left:26px;
+                
+                
+              
+
+            }
+			.easyAccessHeader{
+                
+				background:  #66ff33;
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                text-align:center;
+                height:20px;
+                width:100%;
+                position:relative;
+                
+                
+                
+              
+
+            }
+	.editorMode{
+                
+				background:  #66ff99;
+				padding: 20px; 	
+                
+				border-radius: 5px;
+                
+                
+                height:20px;
+                width:253px;
+                position:relative;
+                left:26px;
+                
+                
+              
+
+            }
+	.blackHeader{
+                
+				background:  #000105;
+				padding: 40px 0;
+                
+				border-radius: 5px;
+                text-align: center;	
+               
+                width:75%;
+				
+				position:relative;
+				left:10%;
+				
+                
+                
+                
+              
+
+            }
+			
+	.leftNew{
+                
+				background:  #72a8ff;
+				padding:30px;
+                
+				border-radius: 5px;
+                text-align: center;	
+               
+                width:30%;
+				height:55%;
+				
+				position:relative;
+				
+				left: 12%;
+				top:50px;
+
+                 transition: background 1s;
+                
+                
+              
+
+            }
+			
+	.leftNew:hover {
+				background:  #0a68ff;
+	}
+	
+	.saveFilling:hover {
+				background:  #ffffff;
+	}
+	.leftImport{
+                
+				background: #d8ff91;
+				padding: 50px 0;
+                
+				border-radius: 5px;
+                text-align: center;	
+				vertical-align: text-top;
+				
+                width:30%;
+				height:500px;
+				
+				position:relative;
+				
+				left: 12%;
+				top:50px;
+
+               
+                
+                
+              
+
+            }
+			
+	.rightExist1{
+                
+				background:  #fff791;
+				padding: 30px;
+                
+				border-radius: 5px;
+                text-align: center;	
+               
+                width:25%;
+				height:410px;
+				position:absolute;
+				
+				left: 60%;
+				top:295px;
+
+                 transition: background 1s;
+                
+                
+              
+
+            }
+			
+	.rightExist1:hover {
+				background:  #ffb31c;
+	}
+	.rightExist2{
+                
+				background: #fff791;
+				padding: 50px 0;
+                
+				border-radius: 5px;
+                text-align: center;	
+				vertical-align: text-top;
+				
+                width:30%;
+				height:500px;
+				
+				position:absolute;
+				
+				left: 55%;
+				top:295px;
+             
+                
+                
+              
+
+            }
+	.categoryList{
+                
+				background:#ffcd91;
+				
+                
+				border-radius: 5px;
+				align:center;
+				
+				
+                width:80%;
+				height:10%;
+				
+				position:relative;
+				left:10%;
+				
+				transition: background 1s;
+				
+                
+                
+              
+
+            }
+	.categoryList:hover {
+				background:  #ffedd8;
+	}
+	
+	.categoryList2{
+                
+				background:#ffcd91;
+				
+                padding:10px;
+				border-radius: 5px;
+				align:center;
+				
+				
+                width:80%;
+				
+				
+				position:relative;
+				left:10%;
+				
+				transition: background 1s;
+				
+                
+                
+              
+
+            }
+	.categoryList2:hover {
+				background:  #ffedd8;
+	}
+	
+	.formList{
+                
+				background:#ff895e;
+				
+                
+				border-radius: 5px;
+				align:center;
+				
+				
+                width:80%;
+				height:10%;
+				
+				position:relative;
+				left:10%;
+				
+				transition: background 1s;
+				
+                
+                
+              
+
+            }
+	.formList:hover {
+				background:  #ffedd8;
+	}
+	.item{
+				align:center;
+				width:400px;
+	}
+	
+	</style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+		<div id="tempDIv" style="display:none;"></div>
+
+
+
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="">SIIT Form System</a>
+            </div>
+
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a id="nav-home"><i class="fa fa-fw fa-desktop"></i> Home</a>
+                    </li>
+
+                    <li>
+                        <a id="nav-newF"><i class="fa fa-fw fa-file"></i> Add New Forms</a>
+                    </li>
+
+					<li>
+                        <a id="nav-Tut"><i class="fa fa-fw fa-wrench"></i> Tutorial</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+		<div id="mainContent">
+			<!-- <input type="image" id='debugger' name='Plz save me' src="myPic/debugger.jpg" style='border-radius:20px;position:fixed;width:100px;height:60px;left:3%;top:10%'/>-->
+
+
+			<div id="textBoxLayerSpecial" style="position:absolute;left:0px;top:0px;"></div>
+
+			<!--Home Page ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+			<div id="homePage" name="homePage">
+				<input type="image" id='merge' name="merge" src="myPic/merge_2.png" style='border-radius: 5px;width:60px;height:60px;left:30px;top:5px;position:relative;'  />
+				<table width="500" height="200">
+				  <tr>
+					<!-- item01 Slots that can handle 9 file per package-->
+					<th>
+					<div id="Item00" class="item" style="max-height:400px;">
+
+					</div>
+					</th>
+					<!-- item02 -->
+					<th>
+					<div id="Item01" class="item" style="max-height:400px;">
+					</div>
+					</th>
+					<!-- item03 -->
+					<th>
+					<div id="Item02" class="item" style="max-height:400px;">
+					</div>
+					</th>
+				  </tr>
+
+				  <tr>
+				  <!-- item04 -->
+				  <th>
+					<div id="Item03" class="item" style="max-height:400px;">
+					</div>
+				  </th>
+				  <!-- item05 -->
+				  <th>
+					<div id="Item04" class="item" style="max-height:400px;">
+					</div>
+				  </th>
+				  <!-- item06 -->
+				  <th>
+					<div id="Item05" class="item" style="max-height:400px;">
+					</div>
+				  </th>
+				  </tr>
+
+				  <tr>
+				  <!-- item07 -->
+				  <th>
+					<div id="Item06" class="item" style="max-height:400px;">
+					</div>
+				  </th>
+				  <!-- item08 -->
+				  <th>
+					<div id="Item07" class="item">
+					</div>
+				  </th>
+				  <!-- item09 -->
+				  <th>
+					<div id="Item08" class="item">
+					</div>
+				  </th>
+				  </tr>
+				</table>
+
+			</div>
+			<!-- end of Home Page ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+			<!-- Filling Page ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+			<div id="fillingPage" name="fillingPage">
+				<div id="textBoxLayerSpecial2" style="position:absolute;left:0px;top:0px;"></div>
+				<div id="textBoxLayerF" style="position:absolute"></div>
+				<input type="image" id='backToFirst' name='backToFirst' src="myPic/previous.png" style='position:fixed;width:80px;height:80px;left:250px;top:90px'/>
+
+				<!--<input type="image" id='magnifyHelp' name='magnifyHelp' src="myPic/dMagnify.png" style='position:fixed;width:80px;height:80px;left:20%;bottom:5%;z-index:1000000;'/>-->
+
+				<div id="imageZone">
+
+
+
+
+				<input type="image" id='admission_form_2' name="admission_form_2" src="myPic/admission_form_2.jpg" style='border-radius: 5px;width:800px;height:1000px;left:400px;top:100px;position:absolute;' onerror="if (this.src != 'myPic/error.png') this.src = 'myPic/error.png';"  />
+				<!--<input type="image" id='commentCheck' name='commentCheck' src="myPic/Comment.png" style='border-radius:20px;position:fixed;width:80px;height:80px;left:1400px;top:90px'/>--->
+				</div>
+
+				<!-- <textarea type="text" id='commentBox'name="commentBox" style='border-radius: 5px;width:260px;height:500px;left:1230px;top:100px;position:fixed;'></textarea> --->
+				<div id="hamAccess" class="hamAccess">
+
+					<!-- <div id="easyAccessHeader" class="easyAccessHeader"><p style='position:relative;top:-10px;'>Quick Access</p></div>  --->
+					<div id="textOverlay"></div>
+				</div>
+			</div>
+			<!-- End of Filling Page ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+			<!-- Editor Page ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+			<div id="demoPage" name="demoPage">
+				<input type="image" id='backToFirst' name='backToFirst' src="myPic/previous.png" style='position:fixed;width:80px;height:80px;left:250px;top:90px'/>
+				<input type="image" id='admission_form_2' name="admission_form_2" src="myPic/admission_form_2.jpg" style='border-radius: 5px;width:800px;height:1000px;left:400px;top:100px;position:absolute;'  />
+
+			</div>
+			<div id="editorPage" name="editorPage">
+				<!-- First Layer -->
+				&nbsp;
+				<div id="section1">
+				<div id="blackHeader" class="blackHeaderNewForm"><img src="myPic/addform_banner.png" style="position:relative;width:80%;height:50%;left:70px;"></div>
+				<!--<div id="blackHeader" class="blackHeader" align="center"><font size="3" color="white">Add New Form</font></div>-->
+
+
+				<input type="image" id='leftNew' name="leftNew" class="leftNew" src="myPic/add.png"/>
+				<input type="image" id='rightExist1' name="rightExist1" class="rightExist1" src="myPic/select.png"/>
+
+				<div id="leftImport" class="leftImport" >
+
+					<h1>Pick a File</h1>
+					<input type="file" id="the-photo-file-field" style="position:relative;left:25%;">
+
+					<div id="preview">
+					<!--image will be inserted here-->
+					</div>
+					<div id="data" class="large-8 columns">
+						<h2 id="name"></h2>
+						<p id="size"></p>
+						<p id="type"></p>
+						<input type="image" id='confirmNew' name='Confirm New' src="myPic/done.png" style='border-radius:20px;position:relative;width:120px;height:80px;left:0%;top:0px'/>
+
+					</div>
+
+				</div>
+
+				<div id="rightExist2" class="rightExist2" >
+					<div id="rightExist2Content" style="height:100%;">
+					</div>
+				</div>
+				</div>
+
+			<!-- Editor Page - new File ------>
+			<div id="section2">
+				<div id="sec2MainWindow" style="border-radius:20px;position:absolute;width:50%;left:400px;top:20%;background:#c3c6cc">
+				<p style="font-size:160%;text-align:center;">Clearance Password Setting</p>
+					<input type="text" align="center" id="formName" maxlength="34" size="35" value=""   placeholder="Set your Form Name" style='border-radius:5px;text-align:center;display:block;margin:0 auto;left:31%' >
+					<input type="text" align="center" id="defaultPassword" maxlength="10" size="35" value=""   placeholder="Default Password(empty possible)" style='border-radius:5px;text-align:center;display:block;margin:0 auto;left:31%;' >
+
+					<br/>
+					<p id="sec2p1" style="font-size:100%;text-align:center;">Enter the number of Approver</p>
+					<input type="text"  align="center" id="numberOfApprover" maxlength="1" size="4" value="" placeholder="#" style='border-radius:5px;text-align:center;display:block;margin:0 auto;left:45%;'>
+					<br/>
+
+					<div id="sec2subAdd"></div>
+
+					<input type="image" id='doneWithApprover' src="myPic/done.png" style='border-radius:20px;position:relative;width:120px;height:50px;left:42%;top:0px'/>
+					<br/>
+					<input type="image" id="doneWithClearance" src="myPic/confirm.png" style="border-radius:20px;position:relative;width:120px;height:45px;left:41%;top:0%"/>
+
+				</div>
+
+			</div>
+			<div id="section3">
+					<div id="editorPage2" name="editorPage2">
+
+						<div id="newTextBoxLayer" style="z-index:100;position:absolute"></div>
+
+						<input type="image" id='newFormPreview' name="Form Preview" src="myPic/Form_1.jpg" style='border-radius: 5px;width:800px;height:1000px;left:400px;top:100px;position:absolute;'  />
+						<div class="blackheader">
+							<div id="addBoxMenu" style="padding:10px;border-radius:10px;position:fixed;left:82%;top:20%;background:#727272;height:200px;width:100px">
+
+							<input type="image" id='addTextBox' name='Add textbox' src="myPic/textbox.png" style='width:80px;height:80px;'/>
+							<input type="image" id='addCheckBox' name='Add textbox' src="myPic/checkbox.png" style='width:80px;height:80px;top:85px;'/>
+
+						</div>
+
+
+
+						<input type="image" id='saveFin' name='Save the new form' src="myPic/done.png" style='border-radius:20px;position:absolute;width:100px;height:60px;left:82%;top:10%;position:fixed'/>
+
+
+
+						<div id="editorPanelBox"  >
+							<div class="containerPanel">
+									<div id="panelApproverList" style="padding:20px;border-radius:2px;position:fixed;left:81.5%;top:25%;background:#c3c6cc">
+										<input type="radio" name="approverPicked" value="0" checked="checked">Student</br>
+									</div>
+
+									<input type="text" id="textBoxLenghtIs" maxlength="2" size="2" value="8" style='border-radius:20px;position:fixed;left:83.3%;top:42%;text-align:center;'>
+
+									<input type="image" id='upTextBox' src="myPic/up.png" style="border-radius:20px;position:fixed;width:50px;height:50px;left:84.3%;top:50%"/>
+									<input type="image" id='leftTextBox' src="myPic/left.png" style="border-radius:20px;position:fixed;width:50px;height:50px;left:81.3%;top:56%"/>
+									<input type="image" id='rightTextBox' src="myPic/right.png" style="border-radius:20px;position:fixed;width:50px;height:50px;left:87.4%;top:56%"/>
+									<input type="image" id='downTextBox' src="myPic/down.png" style="border-radius:20px;position:fixed;width:50px;height:50px;left:84.3%;top:62%"/>
+
+									<input type="image" id='doneWithBox' src="myPic/confirm.png" style="border-radius:20px;position:fixed;width:120px;height:55px;left:81.6%;top:70%"/>
+							</div>
+							<input type="text" id="textHelper" style=" z-index:100;font-size:100px;position:fixed;top:80%;width:80%;left:15%;">
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="section4">
+					 <div id="saveMainPanel" style="border-radius:20px;position:absolute;width:30%;left:45%;top:20%;background:#c3c6cc">
+						<p style="font-size:160%;text-align:center;">Save to...</p>
+						<div id="newListPanel" style="" ></div>
+					</div>
+				</div>
+			<!-- End of Editor Page ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+		</div>
+    </div>
+	
+    <script>
+	$(document).ready(function() {
+	  $.ajaxSetup({ cache: false });
+	});
+	$(document).ready(function(){
+		//----------------------------------------------------------------------
+		// Pre-Define Function Area
+		
+		
+		function clearPage() { 
+			$('#homePage').children().hide();
+			$('#fillingPage').children().hide();
+			$('#editorPage').children().hide();
+			$('#demoPage').children().hide();
+			logInToken = 'Invalid' ;
+		};
+		
+		function getLenghtOfJSON(a){
+			var count = 0;
+			for(var i=0;i<1000;i++){
+				if(a[i] != null){
+					count=count+1;
+				};
+				
+			};
+			return count;
+		};
+		function reloadHomePage() { //-RE1-
+			tutImgSrc = "myPic/homepage.png";
+			logInTokenName = null;
+		    homePageArray = [];
+			$('#homePage').children().show()
+			$('#textBoxLayerSpecial2').html("");
+			$.ajax({
+								type : 'GET',
+								dataType: 'json',
+								url : "/kw1TempServer/Senior%20Project%20KW%20Demo/php/jsonFile.json",
+								success : function(data) {
+								   //if successfull           
+								   ////console.log(data.c1.cName);
+								   toItem = 0;
+								   
+								   for(iRun=0;iRun<9;iRun++){ //cleaner loop
+										$( "#Item0"+iRun ).html("");
+								   }
+								   nowHaveItemCount=0;
+								   $.each(data,function(i,subData){
+										
+										//console.log("Fecting success - "+subData.cName)
+										
+										$( "#Item0"+toItem ).append("<div id='examplePanel01' class='examplePanel01'><input type='image' id='formIcon' name='formIcon' src='myPic/forms.png' style='width:130px;height:130px;left:20px;position:relative;'  /><p id='formNameLabel"+toItem+"'style='text-align:center;' ><font color='#BBBBBB'>"+subData.iName+"</font></p></div><div id='examplePanel02' class='examplePanel02'><input type='image' id='cross"+toItem+"' class='delete' name='cross' src='myPic/cross.png' style='border-radius: 5px;width:30px;height:30px;left:-20px;top:-18px;position:relative;'  /><input type='image' id='copy"+toItem+"' name='copy' class='coppy' src='myPic/copy.png' style='border-radius: 5px;width:30px;height:30px;left:-20px;top:-18px;position:relative;'  /></div><div id='examplePanel03' class='examplePanel03'><input type='image' id='enter"+toItem+"' name='enter' src='myPic/search.png' class='enter' style='border-radius: 10px;width:43px;height:43px;left:-20px;top:-16px;position:relative;'  /><input type='image' id='edit"+toItem+"' class='edit' name='edit' src='myPic/pencil.png' style='border-radius: 5px;width:40px;height:40px;left:-20px;top:-18px;position:relative;'  /><input type='text' id='password"+toItem+"'name='password01' style='border-radius: 5px;width:110px;height:40px;left:70px;top:-78px;position:relative;'><input type='image' id='key"+toItem+"' name='key' class='key' src='myPic/key.png' style='border-radius: 5px;width:40px;height:40px;left:72px;top:-63px;position:relative;'  /><div id='status"+toItem+"' class='status'><p id='statusText"+toItem+"' name='status text' align='center' style='position:relative;top:-10px;'> Locked</p></div></div>");					   
+										nowHaveItemCount=nowHaveItemCount+1;
+										console.log("now posting item# - "+toItem+" which name - "+subData.iName);
+										
+										homePageArray[toItem] = subData.iName;
+										
+										toItem = toItem+1;
+								   });
+								   console.log("homePageArray is - "+homePageArray);
+								   //alert("IT SUCCESS...");
+								},
+								error:function(data){
+								//if error
+									alert("Invalid JSON file");
+								}
+			});
+		};
+		
+						
+						
+						
+						function getFile(xTargetName,xTargetLink){
+							$.get( xTargetLink, function( data1 ) { //get the actual link part1
+								var resourceContent2 = data1;
+								targetLink = resourceContent2.split('\r\n');
+								////console.log("targetLink is: "+targetLink);
+							});
+							$.get( xTargetName, function( data2 ) { //get the name part2
+								var resourceContent = data2; // can be a global variable too...
+								// process the content...
+								//$('#rightExist2').html(resourceContent);
+								
+								var targetName = resourceContent.split('\r\n'); //load data each line of .TXT
+								
+								$("#rightExist2Content").html("");
+								
+								for(var i = 0; i < targetName.length; i++){
+									  $( "#rightExist2Content" ).append( '<div name ="'+targetLink[i]+'"id="'+targetLink[i]+'" class="categoryList"><div style="position:relative;top:10px;"><img src="myPic/merge.png" style="height:20px;width:20px;">'+targetName[i]+'</div></div>&nbsp'); 	
+									////console.log("i :"+i+" is - "+targetName[i]);						  
+									////console.log("TargetLink :"+i+" is - "+targetLink[i]);		
+								}
+								
+							});
+						};
+						function openFileX(xTargetName){
+							$.get( xTargetName, function( data1 ) { //open file then put them in array targetCategory
+								var resourceContent2 = data1;
+							    var targetCategory = resourceContent2.split('\r\n');
+								return targetCategory;
+							});
+						};
+						function testfileCarriage(xTargetName){
+							$.get( xTargetName, function( dataMined ) {
+								var resourceContent = dataMined;
+							    var arrayResult = resourceContent.split('\r\n');
+								//console.log("Testing carriage...."+arrayResult);
+								//console.log("Course Management Form(s) = picked->"+arrayResult[0]);
+								if(arrayResult[0]='Course Management Form(s)'){
+									//console.log("Equal!!");
+									
+								}else{
+									//console.log("fuck!!");
+								}
+							});
+						};
+						function getFormsName(xTargetName){
+							$.get( xTargetName, function( data1 ) { //open file then put them in array targetCategory
+								var resourceContent2 = data1;
+							    var targetCategory = resourceContent2.split('\r\n');
+								//console.log("Name fecting from - "+targetCategory+" - which is ="+targetCategory[0]);
+								return targetCategory[0];
+							});
+						};
+						function getFile2(xTarget){
+							//console.log("getFile2 Going for : "+xTarget);
+							$.get( xTarget, function( data ) {
+								var resourceContent = data; // can be a global variable too...
+								// process the content...
+								//$('#rightExist2').html(resourceContent);
+								
+								var lines = resourceContent.split('\r\n'); //load data each line of .TXT
+								
+								$("#rightExist2Content").html("");
+								
+								for(var line = 0; line < lines.length; line++){
+									  //console.log("Line :"+line+" is - "+lines[line]);						  
+									$( "#rightExist2Content" ).append( '<div id="'+lines[line]+'" class="formList"><div style="position:relative;top:10px;"><img src="myPic/merge.png" style="height:20px;width:20px;">'+lines[line]+'</div></div>&nbsp'); 	
+									
+
+								}
+								
+							});
+						};
+						
+		//-------------------------------------Imported--------------
+		//check if browser supports file api and filereader features
+		if (window.File && window.FileReader && window.FileList && window.Blob) {
+			
+		   //this is not completely neccesary, just a nice function I found to make the file size format friendlier
+			//http://stackoverflow.com/questions/10420352/converting-file-size-in-bytes-to-human-readable
+			function humanFileSize(bytes, si) {
+				
+				$('#confirmNew').show();
+				
+				var thresh = si ? 1000 : 1024;
+				
+				if(bytes < thresh) return bytes + ' B';
+				var units = si ? ['kB','MB','GB','TB','PB','EB','ZB','YB'] : ['KiB','MiB','GiB','TiB','PiB','EiB','ZiB','YiB'];
+				var u = -1;
+				do {
+					bytes /= thresh;
+					++u;
+				} while(bytes >= thresh);
+				return bytes.toFixed(1)+' '+units[u];
+			}
+
+
+		  //this function is called when the input loads an image
+			function renderImage(file){
+				var reader = new FileReader();
+				reader.onload = function(event){
+					the_url = event.target.result
+					newFormPreviewUrl=the_url;
+			  //of course using a template library like handlebars.js is a better solution than just inserting a string
+					$('#preview').html("<img style='width:150px;height:150px' src='"+the_url+"' />")
+					
+					
+					$('#name').html(file.name)
+					
+					uploadedPicName = file.name;
+					uploadedPicName = "php/uploads/"+uploadedPicName;
+					console.log("Picture file name is - "+uploadedPicName);
+				
+					$('#size').html(humanFileSize(file.size, "MB"))
+					$('#type').html(file.type)
+				}	
+			
+			//when the file is read it triggers the onload event above.
+				reader.readAsDataURL(file);
+			}
+
+		  
+		  //this function is called when the input loads a video
+			function renderVideo(file){
+				var reader = new FileReader();
+				reader.onload = function(event){
+					the_url = event.target.result
+			  //of course using a template library like handlebars.js is a better solution than just inserting a string
+			  $('#data-vid').html("<video width='400' controls><source id='vid-source' src='"+the_url+"' type='video/mp4'></video>")
+			   $('#name-vid').html(file.name)
+					$('#size-vid').html(humanFileSize(file.size, "MB"))
+					$('#type-vid').html(file.type)
+
+				}
+			
+			//when the file is read it triggers the onload event above.
+				reader.readAsDataURL(file);
+			}
+
+		  
+
+		  //watch for change on the 
+			$( "#the-photo-file-field" ).change(function() {
+				//console.log("photo file has been chosen")
+				//grab the first image in the fileList
+				//in this example we are only loading one file.
+				//console.log(this.files[0].size)
+				renderImage(this.files[0])
+
+			});
+		  
+			$( "#the-video-file-field" ).change(function() {
+				//console.log("video file has been chosen")
+				//grab the first image in the fileList
+				//in this example we are only loading one file.
+				//console.log(this.files[0].size)
+				renderVideo(this.files[0])
+
+			});
+
+		} else {
+
+		  alert('The File APIs are not fully supported in this browser.');
+
+		}
+		//-------------------------------------end of Imported--------------
+  
+		
+		//End of Pre-Define Function Area
+		//----------------------------------------------------------------------
+		//Initialized Fucntion Area
+		
+		
+		
+		
+		
+
+		//------------------------category handler-------------------------------------------------------------------------------
+
+		
+
+		
+		//------------------------category handler end & Forms Handler Section Start-------------------------------------------------------------------------------
+		$('#fillingPage').on('click', '#backToFirst', function (event) {
+			clearPage();
+			reloadHomePage();
+		});
+		$('#demoPage').on('click', '#backToFirst', function (event) {
+			clearPage();
+			reloadHomePage();
+		});
+		logInToken = "Invalid";
+		$('#homePage').on('click', '.key', function (event) { //-V1-
+			selectedKey = event.target.id;
+			selectedKey = selectedKey.split('key')[1];
+			logInTokenWho = 0;
+			targetArrayNameVar3 = 0;
+			setTimeout(function(){ //loop for iName corresponding to key
+				$.ajax({
+								type : 'GET',
+								dataType: 'json',
+								url : "/kw1TempServer/Senior%20Project%20KW%20Demo/php/jsonFile.json",
+								success : function(data) {
+								   //if successfull           
+								   ////console.log(data.c1.cName);
+								   targetingItem = 0;
+								   
+								   $.each(data,function(index,data){
+										if(targetingItem == selectedKey){
+											console.log("item clicked is - "+data.iName);
+											//clearPage();
+												//alert($('#password'+selectedKey+'').val()+" and "+data.iDefPassword);
+											//alert(data.iArrayPassword[0]);
+											if($('#password'+selectedKey+'').val()==data.iDefPassword){
+												$('#status'+selectedKey+'').css('background',' #7EFF57');
+												$('#statusText'+selectedKey+'').html('Logged in as Student-Default');
+												logInToken = "OK";
+												logInTokenName = "Default Student";
+											}else if($.inArray($('#password'+selectedKey+'').val(), data.iArrayPassword) != -1 ){
+												$('#status'+selectedKey+'').css('background',' #7EFF57');
+												
+												lenght = getLenghtOfJSON(data.iArrayName);
+												console.log("JSON lenght is "+lenght);
+												targetArrayNameVar = 0;
+												for(var i =0;i<lenght;i++){
+													
+													if(($('#password'+selectedKey+'').val())==data.iArrayPassword[i]){
+														console.log("located logging owner at - "+targetArrayNameVar);
+														targetArrayNameVar2 = targetArrayNameVar; //located the index of name of coresponding password
+														targetArrayNameVar = targetArrayNameVar+1;
+														
+														//alert(targetArrayNameVar2);
+													}else{
+														console.log("this is not logging owner at at - "+targetArrayNameVar);
+														targetArrayNameVar = targetArrayNameVar+1;
+													}
+												}
+												
+												$('#statusText'+selectedKey+'').html('Logged in as '+data.iArrayName[targetArrayNameVar2]);
+												targetArrayNameVar3 = targetArrayNameVar2+1;
+												logInToken = "OK";
+												logInTokenName = data.iArrayName[targetArrayNameVar2];
+											}else {
+											
+												$('#status'+selectedKey+'').css('background',' #fc2836');
+												$('#statusText'+selectedKey+'').html('Invalid Password');
+												logInToken = "Invalid";
+												
+											}
+										};
+										
+										targetingItem = targetingItem + 1;
+										
+								   });
+								   
+								   //alert("IT SUCCESS...");
+								},
+								error:function(data){
+								//if error
+									alert("something happen to JSON file");
+								}
+				});
+				setTimeout(function(){
+					
+					console.log("-------check who login done---------");
+				}, 100);
+			}, 100);
+			
+					
+			
+			
+		});
+		
+		$('#section3').on('click', '#addTextBox', function (event) {
+			addTextBoxMode = 1;
+			console.log("add text box mode - "+addTextBoxMode);
+			$('#addBoxMenu').hide();
+			$('#textBoxLenghtIs').show();
+		});
+		
+		$('#section3').on('click', '#addCheckBox', function (event) {
+			addTextBoxMode = 2;
+			console.log("add text box mode - "+addTextBoxMode);
+			$('#addBoxMenu').hide();
+			
+		});
+		//Filling Page Helper
+		$('#fillingPage').on('change', '.quickInput', function (event) { //Quick affect Box
+			selectedFillingInput = event.target.id;
+			selectedFillingInput = selectedFillingInput.split('quickInput')[1];
+			
+			$('#fillingText'+selectedFillingInput).val($(this).val());
+			$('#fillingText'+selectedFillingInput).css("border-color","#87f469"); //-F1-
+			if($(this).val() != ""){
+				//console.log("event fired!");
+				$('#quickAccessCol'+selectedFillingInput).css("background","#90ff7c");
+			}else{
+				$('#quickAccessCol'+selectedFillingInput).css("background","#ff6d75");
+			}
+		});
+		
+		$('#fillingPage').on('change', '.fillingTextBox', function (event) { //Box affect Quick
+			selectedFillingInput2 = event.target.id;
+			selectedFillingInput2 = selectedFillingInput2.split('fillingText')[1];
+			console.log("selectedFillingInput2 is "+selectedFillingInput2+" to "+$('#quickInput'+selectedFillingInput2).val());
+			$('#fillingText'+selectedFillingInput2).css("border-color","#87f469"); //-F2-
+			$('#quickInput'+selectedFillingInput2).val($(this).val());
+			if($(this).val() != ""){
+				//console.log("event fired!");
+				$('#quickAccessCol'+selectedFillingInput2).css("background","#90ff7c");
+			}else{
+				$('#quickAccessCol'+selectedFillingInput2).css("background","#ff6d75");
+			}
+		});
+		
+		$('#fillingPage').on('change', '.fillingCheckBox', function (event) { //Quick affect Box-CheckBox
+			selectedFillingInput3 = event.target.id;
+			selectedFillingInput3 = selectedFillingInput3.split('fillingCheck')[1];
+			console.log("selectedFillingInput3 is "+selectedFillingInput3);
+			
+			$('#quickInput'+selectedFillingInput3).prop("checked", !$('#quickInput'+selectedFillingInput3).prop("checked"));
+			$('#quickAccessCol'+selectedFillingInput3).css("background","#90ff7c");
+		});
+		
+		$('#fillingPage').on('change', '.quickInput', function (event) { //Box affect Quick-CheckBox
+			selectedFillingInput4 = event.target.id;
+			selectedFillingInput4 = selectedFillingInput4.split('quickInput')[1];
+			console.log("selectedFillingInput4 is "+selectedFillingInput4);
+			
+			$('#fillingCheck'+selectedFillingInput4).prop("checked", !$('#fillingCheck'+selectedFillingInput4).prop("checked"));
+			$('#quickAccessCol'+selectedFillingInput4).css("background","#90ff7c");
+		});
+		
+		
+		//Text Helper 
+		$('#section3').on('change', '#workingOnText', function (event) {
+		
+			$('#textHelper').val($(this).val());
+		});
+		
+		$('#section3').on('change', '#textHelper', function (event) {
+			
+			$('#workingOnText').val($(this).val());
+		});
+		
+		$('#section3').on('change', '#textBoxLenghtIs', function (event) {
+			$('#workingOnText').attr("maxlength",$('#textBoxLenghtIs').val());
+			$('#workingOnText').attr("size",$('#textBoxLenghtIs').val());
+		});
+				 
+		//4Direction Pad
+		$('#section3').on('click', '#upTextBox', function (event) {
+			$('#workingOn').css("top","-=2px");
+			//saving data
+			workingOnX = $('#workingOn').css('top');
+			console.log("workingOnX is now - "+workingOnX);
+		});
+		$('#section3').on('click', '#leftTextBox', function (event) {
+			$('#workingOn').css("left","-=2px");
+			//saving data
+			workingOnY  = $('#workingOn').css('left');
+			console.log("workingOnY is now - "+workingOnY);
+		});
+		$('#section3').on('click', '#rightTextBox', function (event) {
+			$('#workingOn').css("left","+=2px");
+			//saving data
+			workingOnY  = $('#workingOn').css('left');
+			console.log("workingOnY is now - "+workingOnY);
+		});
+		$('#section3').on('click', '#downTextBox', function (event) {
+			$('#workingOn').css("top","+=2px");
+			//saving data
+			workingOnX = $('#workingOn').css('top');
+			console.log("workingOnX is now - "+workingOnX);
+		});
+		
+		//Done with Textbox
+		$('#section3').on('click', '#doneWithBox', function (event) {
+			textBoxClicked = 0;
+			$('#textHelper').val("");
+			console.log("Number of Textbox is - "+numberOfTextBox);
+			
+			$('#editorPanelBox').hide();
+			setTimeout(function(){ $( "#addBoxMenu" ).children().fadeIn( "slow", function() {
+					// Animation complete
+				}); }, 100);
+				setTimeout(function(){ $( "#addBoxMenu" ).fadeIn( "slow", function() {
+					// Animation complete
+				}); }, 100);
+			
+			//saving finalize
+			workingOnX = $('#workingOn').css('top');
+			workingOnY  = $('#workingOn').css('left');
+			//workingOnLenght  = $('#workingOn').attr('size');
+			radioValue = $("input[name='approverPicked']:checked").val();
+			
+			//console.log("Saving--"+workingOnX+"-"+workingOnY+"-"+textBoxLenghtIsVar+"-"+radioValue+"-"+$('#workingOnText').val()+"-");
+			
+			if(addTextBoxMode==1){
+				setOfType[numberOfTextBox] = 0; //Plain Text Box Type
+			};
+			if(addTextBoxMode==2){
+				setOfType[numberOfTextBox] = 1; //Check Box Type
+			};
+			
+			setOfX[numberOfTextBox] = workingOnX;
+			setOfY[numberOfTextBox] = workingOnY;
+			setOfLenght[numberOfTextBox] =  $('#textBoxLenghtIs').val();
+			setOfOwner[numberOfTextBox] = radioValue;
+			setOfComment[numberOfTextBox] = $('#workingOnText').val();
+			numberOfTextBox = numberOfTextBox + 1;
+			
+			if(addTextBoxMode==1){
+			$('#workingOnText').attr("readonly","readonly");
+			$('#workingOnText').css("border-color","red"); // -W1-
+			};
+			
+			if(addTextBoxMode==2){
+			
+			$('#workingOn').css("opacity",1); // -W1-
+			};
+			
+			setTimeout(function(){
+				$('#workingOn').attr("id","doneBox");
+				$('#workingOnText').attr("id","doneBoxText");
+				addTextBoxMode=0;
+				console.log("Convert to doneBoxText Successful...");
+			}, 100);
+			
+			
+			
+			
+			
+			
+			
+		});
+		$('#section2').on('click', '#doneWithApprover', function (event) {
+			numberOfApproverVar = $('#numberOfApprover').val();
+			if (numberOfApproverVar > 0){
+			
+				
+				
+				for(var i=0;i<numberOfApproverVar;i++){
+						////console.log("Approver no."+i);	
+					$( "#sec2subAdd" ).append(' <input type="text" align="center" id="approverName'+i+'" maxlength="25" size="25" value=""   placeholder="Approver#'+i+' Name" style="border-radius:5px;text-align:center;position:relative;left:24%;" ><input type="text" align="center" id="approverPassword'+i+'" maxlength="10" size="15" value=""   placeholder="Approver#'+i+' Password" style="border-radius:5px;text-align:center;position:relative;left:26%;" ><br/>');
+					
+					
+					
+				};
+				
+				addTextBoxMode = 0;
+				
+				$('#numberOfApprover').hide();
+				$('#doneWithApprover').hide();
+				
+				$('#doneWithClearance').show();
+				
+				$('#sec2p1').html('Set Password and Name for each approver');
+			}else{
+				$('#sec2p1').html('Please enter the number higher or equal to 1');
+			};
+			
+			
+		});
+				
+			
+		
+		$('#section2').on('click', '#doneWithClearance', function (event) {
+			
+			tutImgSrc = "myPic/uploadnewform.png";
+			$('#numberOfApprover').show();
+			$('#section2').hide();
+			$('#section3').show();
+			$('#editorPanelBox').hide();
+			$('#newFormPreview').hide();
+			
+			//-C1-
+			$('#addBoxMenu').children().hide();
+			$('#addBoxMenu').hide();
+			
+			//preparing var for saving
+			setOfX = [];
+			setOfY = [];
+			setOfLenght = [];
+			setOfOwner = [];
+			setOfComment = [];
+			setOfType = [];
+			setOfInput = [];
+			
+			numberOfTextBox = 0;
+			
+			$('#textBoxLayerSpecial').html("");
+			finalarray =[];	
+			loopArray = [];
+			
+			//saving data
+			console.log("----Preparing Saving Process for JSON------");
+			console.log("-Default Password is = "+$('#defaultPassword').val());
+			console.log("-Number of Approver is = "+$('#numberOfApprover').val());
+			if(numberOfApproverVar>0){
+				$('#panelApproverList').html('<input type="radio" name="approverPicked" value="0" checked="checked">Default</br>');
+				for(var i=0;i<numberOfApproverVar;i++){
+				
+					console.log("-Approver"+i+" name/passsword = "+$('#approverName'+i+'').val()+" / "+$('#approverPassword'+i+'').val());
+					$( "#panelApproverList" ).append('<input type="radio" name="approverPicked" value="'+(i+1)+'">'+$('#approverName'+i).val()+'</br>');
+					
+				};
+			};
+			console.log("----Preparing Saving Process for JSON------");
+			setTimeout(function(){ $( "#newFormPreview" ).fadeOut( "slow", function() {
+					// Animation complete
+				}); }, 1000);
+			setTimeout(function(){ 
+
+				
+				$("#newFormPreview").attr("src",newFormPreviewUrl);
+				
+			}, 50);
+			setTimeout(function(){ 
+				setTimeout(function(){ $( "#addBoxMenu" ).children().fadeIn( "slow", function() {
+					// Animation complete
+				}); }, 1000);
+				setTimeout(function(){ $( "#addBoxMenu" ).fadeIn( "slow", function() {
+					// Animation complete
+				}); }, 1000);
+				setTimeout(function(){ $( "#newFormPreview" ).fadeIn( "slow", function() {
+					// Animation complete
+				}); }, 1000);
+			}, 100);
+			
+		});
+		
+		$('#leftImport').on('click', '#confirmNew', function (event) {
+			
+			$('#name').html("");
+			$('#size').html("");
+			$('#type').html("");
+			$('#preview').html(""); //prepare for another new
+			
+			$('#section1').hide();
+			$('#section2').show();  //show editor Page section2
+			
+			$('#doneWithClearance').hide();
+			var file_data = $('#the-photo-file-field').prop('files')[0];   
+			var form_data = new FormData();                  
+			form_data.append('file', file_data);
+			//alert(form_data);                             
+			$.ajax({
+						url: 'php/upload.php', // point to server-side PHP script 
+						dataType: 'text',  // what to expect back from the PHP script, if anything
+						cache: false,
+						contentType: false,
+						processData: false,
+						data: form_data,                         
+						type: 'post',
+						success: function(php_script_response){
+							//alert(php_script_response); // display response from the PHP script, if any
+							console.log("Upload Success");
+						}
+			
+		});
+		
+		});
+		mergeIconAppearing=0;
+		$('#homePage').on('click', '#merge', function (event) { //when Clicked on Merge -M1-
+			console.log("Merging - toItem now = "+toItem);
+			
+			
+			$( "#homePage" ).append( '<div name ="objectiveHelper" id="objectiveHelper"  class ="objectiveHelper" style="position:fixed;background:#90ff68;width:800px;height:60px;z-index:10000;top:60px;left:340px;text-align:center;"><p id="objectiveText" style="position:relative;top:10px;font-size: 150%;">Please select master-form to merge</div>');
+				
+			if(mergeIconAppearing==0){
+				mergeIconAppearing=1;
+				$("#merge").attr("src","myPic/merge.png" );
+				for(var i=0;i<toItem;i++){				
+					
+					$("#Item0"+i).append('<input type="image" id="mergeConfirm'+i+'" class="mergeConfirm" src="myPic/previous.png" style="border-radius:10px;position:relative;width:70px;height:70px;left:230px;top:-330px"/>'); 
+					
+				};	
+			}else if(pickedMotherMerge == 1){
+				$("#merge").attr("src","myPic/merge_2.png" );
+				mergeIconAppearing=0;
+				mergeTargetSelected=0;
+				pickedMotherMerge = 0;
+				$(".objectiveHelper").remove();
+				
+				//$("#objectiveHelper").remove();
+				for(i=0;i<9;i++){
+					$("#mergeConfirmSelected").remove();
+				};
+				
+				for(var i=0;i<toItem;i++){	
+					
+					$("#mergeConfirm"+i).remove();
+				};
+				
+				setTimeout(function(){ //fetch from merge mother -M4-
+					loopForMother = 0;
+					$.ajax({ 
+									type : 'GET',
+									dataType: 'json',
+									url : "/kw1TempServer/Senior%20Project%20KW%20Demo/php/jsonFile.json",
+									success : function(data) {
+									   
+									   $.each(data,function(index,value){
+											console.log(value);
+											console.log("index == mergeMotherID - "+loopForMother+" == "+mergeMotherID);
+											if (loopForMother == mergeMotherID){
+												
+												mFormName = "M - "+value.iName;
+												mApproverNum = value.iApproverNum;
+												mDefPassword = value.iDefPassword;
+												mArrayName = value.iArrayName;
+												mArrayPassword = value.iArrayPassword;
+												mNumTextBox = value.iNumTextBox;
+												mArrayX = value.iArrayX;
+												mArrayY = value.iArrayY;
+												mArrayLenght = value.iArrayLenght;
+												mArrayOwner = value.iArrayOwner;
+												mArrayComment = value.iArrayComment;
+												mArrayType = value.iArrayType;
+												
+												console.log("M-Fecting Name - "+mFormName);
+												console.log("M-Fecting App Num- "+mApproverNum);
+												console.log("M-Fecting Def Pass- "+mDefPassword);
+												console.log("M-Fecting Array Name- "+mArrayName);
+												console.log("M-Fecting Array Pas.- "+mArrayPassword);
+												console.log("M-Fecting #Text Box- "+mNumTextBox);
+												console.log("M-Fecting X Set- "+mArrayX);
+												console.log("M-Fecting Y Set- "+mArrayY);
+												console.log("M-Fecting Lenght Set- "+mArrayLenght);
+												console.log("M-Fecting Owner Set- "+mArrayOwner);
+												console.log("M-Fecting Comment Set- "+mArrayComment);
+												console.log("M-Fecting Type Set- "+mArrayType);
+											};	
+											loopForMother = loopForMother+1;
+									   });
+									   
+									   
+									},
+									error:function(data){
+									//if error
+										alert("Invalid JSON file");
+									}
+					});	
+						
+				},300);
+					
+				
+				setTimeout(function(){ 
+				
+				
+					
+					clearPage();
+					
+					
+					
+						//to mother form - merging
+						itemTargetMerge = "item"+toItem;
+						$.post('php/home_mergeProcess.php',{ itemTarget:itemTargetMerge,mFormName:mFormName,mApproverNum:mApproverNum,mDefPassword:mDefPassword,mArrayName:mArrayName,mArrayName:mArrayName,mArrayPassword:mArrayPassword,mNumTextBox:mNumTextBox,mArrayX:mArrayX,mArrayY:mArrayY,mArrayLenght:mArrayLenght,mArrayOwner:mArrayOwner,mArrayOwner:mArrayOwner,mArrayComment:mArrayComment,mArrayType:mArrayType},function(data){	
+						});	
+					reloadHomePage();
+				},1000);
+				
+
+			}else{ //cancle merge
+				$(".objectiveHelper").remove();
+				//$("#objectiveHelper").html("go away plz");
+				for(var i=0;i<toItem;i++){	
+					
+					$("#mergeConfirm"+i).remove();
+				};	
+				$("#merge").attr("src","myPic/merge_2.png" );
+				mergeIconAppearing=0;
+				mergeTargetSelected=0;
+				pickedMotherMerge = 0;
+			};
+		
+		});
+		mergeTargetSelected = 0;	
+		mergingArray = [];
+		pickedMotherMerge = 0;
+		$('#homePage').on('click', '.mergeConfirm', function (event) { //when Clicked on Merge -M2-
+			mergingArray = [];
+			
+			if(pickedMotherMerge == 0){
+				$('#objectiveText').html("Choose 1 or more form to merge into the master, Click again to finalize")
+				pickedMotherMerge = 1;
+				selectedFormToMerge = event.target.id;
+				selectedFormToMerge = selectedFormToMerge.split('mergeConfirm')[1];
+				mergingArray.push(selectedFormToMerge);
+				
+				mergeMotherID = selectedFormToMerge;
+				mergeMotherName = homePageArray[selectedFormToMerge];
+				
+				console.log("mergingArray is - "+mergingArray);
+				$("#mergeConfirm"+selectedFormToMerge).attr("src","myPic/up.png" );
+				$("#mergeConfirm"+selectedFormToMerge).attr("id","mergeConfirmSelected");
+				mergeTargetName = homePageArray[selectedFormToMerge];
+				console.log("mergeTargetName is - "+mergeTargetName);
+				if (mergeTargetSelected == 0){
+					mergeTargetSelected = 1;
+					setTimeout(function(){ 
+						for(var i=0;i<toItem;i++){	
+							
+							if (mergeTargetName == homePageArray[i]){
+							
+								console.log("Merging matched at - "+i);
+							}else{
+								$("#mergeConfirm"+i).remove();
+							};
+						};
+					}, 100);
+				}else{//select one that wish to merge -M3-
+					
+					
+				}
+			
+			}else{
+				//pickedMotherMerge = 0;
+				selectedFormToMerge = event.target.id;
+				selectedFormToMerge = selectedFormToMerge.split('mergeConfirm')[1];
+				mergingArray.push(selectedFormToMerge);
+				
+				$("#mergeConfirm"+selectedFormToMerge).attr("src","myPic/left.png" );
+				$("#mergeConfirm"+selectedFormToMerge).attr("id","mergeConfirmSelected");
+				
+					
+					
+			};
+			
+		});
+		$('#homePage').on('click', '.coppy', function (event) { //when Clicked on delete -D1-
+			selectedFormToCop = event.target.id;
+			selectedFormToCop = selectedFormToCop.split('copy')[1];
+			
+			console.log("selectedFormToCop1 is - "+selectedFormToCop);
+			
+			setTimeout(function(){ 
+				
+				
+				
+				nameLabelCoppied = $('#formNameLabel'+selectedFormToCop).text();
+				console.log("nameLabelCoppied is - "+nameLabelCoppied);
+				console.log("selectedFormToCop is - "+selectedFormToCop);
+				
+			}, 100);			
+
+			
+			setTimeout(function(){ 
+				$.ajax({ // -L1-
+								type : 'GET',
+								dataType: 'json',
+								url : "/kw1TempServer/Senior%20Project%20KW%20Demo/php/jsonFile.json",
+								success : function(data) {
+								   coppyItemIndex=0;
+								   $.each(data,function(index,value){
+										console.log(selectedFormToCop+" -and- "+coppyItemIndex);
+										if (selectedFormToCop == coppyItemIndex){
+											
+											gFormName = value.iName;
+											gApproverNum = value.iApproverNum;
+											gDefPassword = value.iDefPassword;
+											gArrayName = value.iArrayName;
+											gArrayPassword = value.iArrayPassword;
+											gNumTextBox = value.iNumTextBox;
+											gArrayX = value.iArrayX;
+											gArrayY = value.iArrayY;
+											gArrayLenght = value.iArrayLenght;
+											gArrayOwner = value.iArrayOwner;
+											gArrayComment = value.iArrayComment;
+											gArrayType = value.iArrayType;
+											gArrayInput = value.iArrayInputSave;
+											gPicLink = value.iPicLink;
+											
+											
+											console.log("Fecting Name - "+gFormName);
+											console.log("Fecting App Num- "+gApproverNum);
+											console.log("Fecting Def Pass- "+gDefPassword);
+											console.log("Fecting Array Name- "+gArrayName);
+											console.log("Fecting Array Pas.- "+gArrayPassword);
+											console.log("Fecting #Text Box- "+gNumTextBox);
+											console.log("Fecting X Set- "+gArrayX);
+											console.log("Fecting Y Set- "+gArrayY);
+											console.log("Fecting Lenght Set- "+gArrayLenght);
+											console.log("Fecting Owner Set- "+gArrayOwner);
+											console.log("Fecting Comment Set- "+gArrayComment);
+											console.log("Fecting Type Set- "+gArrayType);
+											console.log("Fecting default Input Set- "+gArrayInput);
+											console.log("Fecting picture link- "+gPicLink);
+											
+											
+										};	
+										coppyItemIndex = coppyItemIndex+1;
+								   });
+								   
+								   
+								},
+								error:function(data){
+								//if error
+									alert("Invalid JSON file");
+								}
+				//$( "#Item0"+toItem ).append("<div id='examplePanel01' class='examplePanel01'><input type='image' id='formIcon' name='formIcon' src='myPic/forms.png' style='width:130px;height:130px;left:20px;position:relative;'  /><p id='formNameLabel"+toItem+"'style='text-align:center;' ><font color='#BBBBBB'>"+nameLabelCoppied+"</font></p></div><div id='examplePanel02' class='examplePanel02'><input type='image' id='cross"+toItem+"' class='delete' name='cross' src='myPic/cross.png' style='border-radius: 5px;width:30px;height:30px;left:-20px;top:-18px;position:relative;'  /><input type='image' id='copy"+toItem+"' name='copy' class='coppy' src='myPic/copy.png' style='border-radius: 5px;width:30px;height:30px;left:-20px;top:-18px;position:relative;'  /></div><div id='examplePanel03' class='examplePanel03'><input type='image' id='enter"+toItem+"' name='enter' src='myPic/search.png' class='enter' style='border-radius: 10px;width:43px;height:43px;left:-20px;top:-16px;position:relative;'  /><input type='image' id='edit"+toItem+"' class='edit' name='edit' src='myPic/pencil.png' style='border-radius: 5px;width:40px;height:40px;left:-20px;top:-18px;position:relative;'  /><input type='text' id='password"+toItem+"'name='password01' style='border-radius: 5px;width:110px;height:40px;left:70px;top:-78px;position:relative;'><input type='image' id='key"+toItem+"' name='key' class='key' src='myPic/key.png' style='border-radius: 5px;width:40px;height:40px;left:72px;top:-63px;position:relative;'  /><div id='status"+toItem+"' class='status'><p id='statusText"+toItem+"' name='status text' align='center' style='position:relative;top:-10px;'> Locked</p></div></div>");		
+				
+			}, 200);
+			
+			setTimeout(function(){ 
+				
+				itemTargetCoppy = 'item'+(nowHaveItemCount);
+				console.log("itemTargetCoppy - "+itemTargetCoppy);
+				$.post('php/home_saveProcess.php',{ itemName:gFormName,itemTarget:itemTargetCoppy,gFormName:gFormName,gApproverNum:gApproverNum,gDefPassword:gDefPassword,gArrayName:gArrayName,gArrayName:gArrayName,gArrayPassword:gArrayPassword,gNumTextBox:gNumTextBox,gArrayX:gArrayX,gArrayY:gArrayY,gArrayLenght:gArrayLenght,gArrayOwner:gArrayOwner,gArrayOwner:gArrayOwner,gArrayComment:gArrayComment,gArrayType:gArrayType,gArrayInputSave:gArrayInput,gPicLink:gPicLink},function(data){	
+				});	
+										
+			}, 700);
+			setTimeout(function(){ 
+				clearPage();
+				reloadHomePage();
+				
+			}, 1000);
+		});
+		
+		});
+		$('#homePage').on('click', '.delete', function (event) { //when Clicked on delete -D1-
+			selectedFormToDel = event.target.id;
+			selectedFormToDel = selectedFormToDel.split('cross')[1];
+			selectedFormToDel3 = parseInt(selectedFormToDel);
+			//selectedFormToDel4 = '';
+			//selectedFormToDel3 = 0;
+			
+			console.log("Deleting....--- #item0"+selectedFormToDel);
+			
+			$( "#homePage" ).append( '<div name ="loadBlack" id="loadBlack" style="position:fixed;background:#000000;width:100%;height:100%;z-index:10000; opacity: 0.8;top:0%;left:0%;"></div>');
+
+			
+			setTimeout(function(){ 	
+					selectedFormToDel2 = 'item'+selectedFormToDel;
+					
+			}, 1000);
+			
+			setTimeout(function(){
+					console.log("selectedFormToDel2 - "+selectedFormToDel2);
+					$.post('php/home_delete.php',{itemTarget:selectedFormToDel2},function(data){	});	
+					
+					$( "#loadBlack" ).append( '<div name ="deleteingProcess" id="deleteingProcess" style="position:fixed;background:#7dff56;width:350px;height:100px;z-index:10000;top:50%;left:40%;border-radius:5px;"><p id="deletingProgressText"style="position:relative;left:106px;top:19px;font-size:250%;font-weight:bold;">Deleting..</p></div>');	
+				
+					
+			}, 1500);
+			
+			setTimeout(function(){ 	
+					$( "#deletingProgressText" ).html( 'Deleting...');	
+					fanningCount = (toItem-1) - selectedFormToDel // -D2- how many json element need to have -1 index
+			}, 2000);
+			
+			setTimeout(function(){ 	
+					$( "#deletingProgressText" ).html( 'Deleting....');	
+					//fanning back
+					console.log("fanningCount is - "+fanningCount);
+					console.log("del target is - "+selectedFormToDel);
+					
+					
+					for(var i=0;i<fanningCount;i++){
+						selectedFormToDel3 = selectedFormToDel3+1;
+						
+						
+						//$.post('php/home_reIndex.php',{itemTarget:('item'+selectedFormToDel),itemTargetNew:('item'+(selectedFormToDel3+1)) },function(data){	});
+						console.log("fanning back ... - "+selectedFormToDel3);							
+						
+						
+					};
+				
+				
+			}, 2500);
+					
+			setTimeout(function(){ 
+					$( "#deletingProgressText" ).html( 'Deleting.....');	
+					//clearPage();
+					//reloadHomePage();
+					$( "#loadBlack" ).remove();
+					$("#Item0"+selectedFormToDel).html(""); //dont forget I not i
+			}, 3000);
+			
+			
+		});
+		
+		$("#convertToPic").click(function() {  //convert to picture function
+		 
+		
+		console.log("------Converting event fired------");
+        html2canvas($("#admission_form_2"), { 
+            onrendered: function(canvas) {
+                theCanvas = canvas;
+                
+
+                // Convert and download as image 
+               
+                $("#img-out").append(canvas);
+				 $("#img-out").show();
+                // Clean up 
+                //document.body.removeChild(canvas);
+				$("#admission_form_2").hide();
+				}
+			});
+			
+		
+		
+		
+		});
+	
+		$('#homePage').on('click', '.edit', function (event) { //when Clicked on forms List -E1-
+			selectedKey = event.target.id;
+			selectedKey = selectedKey.split('edit')[1];
+			arrayInputSave = [];
+			$("#convertToPic").hide();
+			$("#linkTheForm").hide();
+			
+			
+			$( "#homePage" ).append( '<div name ="loadBlack" id="loadBlack" style="position:fixed;top:0%;left:0%;background:#000000;width:100%;height:100%;z-index:10000; opacity: 0.8;"></div>');
+
+			
+			setTimeout(function(){
+			
+				$( "#loadBlack" ).append( '<div name ="loadingProgress" id="loadingProgress" style="position:fixed;background:#7dff56;width:350px;height:100px;z-index:10000;top:50%;left:40%;border-radius:5px;"><p id="loadingProgressText"style="position:relative;left:105px;top:19px;font-size:250%;font-weight:bold;">Loading..</p></div>');	
+			}, 100);
+			setTimeout(function(){
+				$( "#loadingProgressText" ).html( 'Loading...');	
+			}, 400);			
+			setTimeout(function(){
+				$( "#loadingProgressText" ).html( 'Loading....');
+			}, 800);
+			setTimeout(function(){
+			
+				$( "#loadBlack" ).remove();
+			}, 850);
+			setTimeout(function(){
+				$( "#hamAccess" ).html("");
+				if (logInTokenName != null){ 
+				$( "#hamAccess" ).append( '<div name ="hamAccessHeader"id="hamAccessHeader"><div style="border-radius: 5px;position:relative;background:#efefef;padding:10px;text-align:center;">Quick Access </br> Now Logged in as - '+logInTokenName+'</div></div>&nbsp'); 	
+				};
+				//alert(selectedKey);
+				console.log("logInToken is - "+logInToken);
+				if(logInToken=="OK"){
+				
+					clearPage();	
+					$('#fillingPage').children().show();
+					$('#hamAccess').show();
+					
+					$('#textBoxLayerSpecial').html("");
+						setTimeout(function(){ //loop for iName corresponding to key
+							$.ajax({
+										type : 'GET',
+										dataType: 'json',
+										url : "/kw1TempServer/Senior%20Project%20KW%20Demo/php/jsonFile.json",
+										success : function(data) {
+										   
+										   targetingItem = 0;
+										   XBoxArray = [];
+										   YBoxArray = []; 
+										   LenghtBoxArray = [];
+										   OwnerBoxArray = [];
+										   CommentBoxArray = [];
+										   TextBoxArray = [];
+										   TypeBoxArray = [];
+										   
+										   ValueBoxArray =[];
+										   
+										   $.each(data,function(index,data){
+												if(targetingItem == selectedKey){
+													console.log("item editing is - "+data.iName);
+													XBoxArray = data.iArrayX;
+													//console.log("XBoxArray is - "+XBoxArray);
+													YBoxArray = data.iArrayY;
+													LenghtBoxArray = data.iArrayLenght;
+													OwnerBoxArray = data.iArrayOwner;
+													CommentBoxArray = data.iArrayComment;
+													TypeBoxArray = data.iArrayType;
+													ValueBoxArray = data.iArrayInputSave;
+													$("#admission_form_2").attr("src",data.iPicLink);
+													console.log(data.iPicLink);
+												};
+												
+												targetingItem = targetingItem + 1;
+												
+										   });
+										   
+										   //alert("IT SUCCESS...");
+										},
+										error:function(data){
+										//if error
+											alert("something happen to JSON file");
+										}
+							});
+						
+						}, 100);
+						
+						setTimeout(function(){ //decide which text box is required for this token
+							
+							logInTokenWho = targetArrayNameVar3;
+							
+							prepareXArray = [];
+							prepareYArray  = [];
+							prepareLenghtArray  = [];
+							prepareCommentArray  = [];
+							prepareValueArray  = [];
+							prepareTypeArray = [];
+							
+							prepareLoopCounter = 0;
+							console.log("wanted X set_Pre insertion - "+prepareXArray);
+							console.log("logInTokenWho is - "+logInTokenWho);
+							
+							$.each(OwnerBoxArray, function(i,itemX) {
+								//wtf is this console.log('Found - '+itemX);
+								if (itemX == logInTokenWho){
+									prepareXArray[prepareLoopCounter] = XBoxArray[i];
+									prepareYArray[prepareLoopCounter] = YBoxArray[i];
+									prepareLenghtArray[prepareLoopCounter] = LenghtBoxArray[i];
+									prepareCommentArray[prepareLoopCounter] = CommentBoxArray[i];
+									prepareTypeArray[prepareLoopCounter] = TypeBoxArray[i];
+									
+									prepareValueArray[prepareLoopCounter] = ValueBoxArray[i];
+									
+									prepareLoopCounter = prepareLoopCounter + 1;
+								};
+								
+								
+								
+							});
+							
+							
+							setTimeout(function(){  // -E2- After Filtered what box is wanted
+								console.log("----Prepare for Filling Page----------");
+								console.log("wanted X set - "+prepareXArray);
+								console.log("wanted Y set - "+prepareYArray);
+								console.log("wanted Lenght set - "+prepareLenghtArray);
+								console.log("wanted Comment set - "+prepareCommentArray);
+								console.log("wanted Type set - "+prepareTypeArray);
+								console.log("wanted saved input set - "+prepareValueArray);
+								$.each(prepareXArray, function(i,itemX) {
+									textBoxLenghtIsVar2 = prepareLenghtArray[i];
+									//console.log("Deciding Text-Box or Check-Box..."+prepareTypeArray[i]);
+									
+									var x = prepareXArray[i];
+									var y = prepareYArray[i];
+										
+									x2 = prepareXArray[i];
+									y2 = prepareYArray[i];
+										
+									if(prepareTypeArray[i]==0){ //if Text Box Type-for overlay paper--------------------------
+										
+										var comment = prepareCommentArray[i];
+										var saveValue = prepareValueArray[i];
+										//var test = [x,y];
+										
+										//console.log("test array is - "+test);
+										if (textBoxLenghtIsVar2 >= 3) {
+											textBoxSize2 = textBoxLenghtIsVar2-2;
+											console.log("TextBoxSize2 is - "+textBoxSize2);
+										}else{
+											textBoxSize2 = 1;
+											console.log("TextBoxSize2 is - "+textBoxSize2);
+										}
+										if(saveValue!=null){ //Fixed crude way
+											if (saveValue != ""){ // lol
+											console.log("now save value is "+saveValue);
+											var img = $('<input id="fillingText'+i+'" class="fillingTextBox" type="text"  placeholder="'+comment+'" maxlength="'+textBoxLenghtIsVar2+'" size="'+textBoxSize2+'" value="'+saveValue+'"  style="background-color: transparent;border-color:#7ff4cf;"/>');
+											}else{
+											
+											var img = $('<input id="fillingText'+i+'" class="fillingTextBox" type="text"  placeholder="'+comment+'" maxlength="'+textBoxLenghtIsVar2+'" size="'+textBoxSize2+'"  style="background-color: transparent;border-color:red;"/>');
+											
+											}
+										}else{
+											var img = $('<input id="fillingText'+i+'" class="fillingTextBox" type="text"  placeholder="'+comment+'" maxlength="'+textBoxLenghtIsVar2+'" size="'+textBoxSize2+'"  style="background-color: transparent;border-color:red;"/>');
+										};
+										
+										
+										var div = $('<div id="fillingBox'+i+'" >').css({
+											"position": "absolute",                    
+											"left": y,
+											"top": x,//miscalculation - must swap
+											"z-index":100	
+										});
+										
+										div.append(img);
+										
+										
+										$("#textBoxLayerSpecial2").append(div);  
+										if(saveValue!=null){ //textbox for quickaccess bar------------------------------------------------------
+											if (saveValue != ""){ // lol
+											$( "#hamAccess" ).append( '<div name ="quickAccess"id="quickAccess#"'+i+'" style="position:relative;left:5%;width:90%"><div id="quickAccessCol'+i+'" style="border-radius: 5px;position:relative;background:#7ff4cf;padding:5px;text-align:center;">Text Box#'+i+'</br> <input id="quickInput'+i+'" class="quickInput" type="text" value="'+saveValue+'"style="text-align:center;" placeholder="'+comment+'"></input></div></div></br>'); 	
+											}else{
+												$( "#hamAccess" ).append( '<div name ="quickAccess"id="quickAccess#"'+i+'" style="position:relative;left:5%;width:90%"><div id="quickAccessCol'+i+'" style="border-radius: 5px;position:relative;background:#ff6d75;padding:5px;text-align:center;">Text Box#'+i+'</br> <input id="quickInput'+i+'" class="quickInput" type="text" "style="text-align:center;" placeholder="'+comment+'"></input></div></div></br>'); 
+											};
+										}else{
+											$( "#hamAccess" ).append( '<div name ="quickAccess"id="quickAccess#"'+i+'" style="position:relative;left:5%;width:90%"><div id="quickAccessCol'+i+'" style="border-radius: 5px;position:relative;background:#ff6d75;padding:5px;text-align:center;">Text Box#'+i+'</br> <input id="quickInput'+i+'" class="quickInput" type="text" "style="text-align:center;" placeholder="'+comment+'"></input></div></div></br>'); 
+										};
+									};
+									
+									if(prepareTypeArray[i]==1){ //If Check Box Type - overlay-----------------
+									
+										var saveValue = prepareValueArray[i];
+										console.log("saveValue for checkbox is -"+saveValue);
+										if (saveValue=="true"){//checked is the key
+											var img = $('<input id="fillingCheck'+i+'"  class ="fillingCheckBox" type="checkbox" checked  style="-ms-transform: scale(2);-moz-transform: scale(2); -webkit-transform: scale(2); -o-transform: scale(2);padding: 10px;"/>');
+										}else{
+											var img = $('<input id="fillingCheck'+i+'"  class ="fillingCheckBox" type="checkbox"   style="-ms-transform: scale(2);-moz-transform: scale(2); -webkit-transform: scale(2); -o-transform: scale(2);padding: 10px;"/>');
+										};
+										
+						
+										var div = $('<div id="fillingBox'+i+'" >').css({
+											"position": "absolute",                    
+											"left": y2,
+											"top": x2,
+											"z-index":100
+											
+										});
+										div.append(img);
+										console.log("Making Check box with"+y2+x2);
+										$('#textBoxLayerSpecial2').append(div);   //quickaccess checkbox addd------------
+										if (saveValue=="true"){//checked is the key
+											$( "#hamAccess" ).append( '<div name ="quickAccess"id="quickAccess#"'+i+' style="position:relative;left:5%;width:90%"><div id="quickAccessCol'+i+'" style="border-radius: 5px;position:relative;background:#fffa75;padding:5px;text-align:center;">Checkbox#'+i+'</br> <input id="quickInput'+i+'" class="quickInput" type="checkbox" checked style="-ms-transform: scale(2);-moz-transform: scale(2); -webkit-transform: scale(2); -o-transform: scale(2);padding: 10px;" ></input></div></div></br>'); 
+										}else{
+											$( "#hamAccess" ).append( '<div name ="quickAccess"id="quickAccess#"'+i+' style="position:relative;left:5%;width:90%"><div id="quickAccessCol'+i+'" style="border-radius: 5px;position:relative;background:#fffa75;padding:5px;text-align:center;">Checkbox#'+i+'</br> <input id="quickInput'+i+'" class="quickInput" type="checkbox"  style="-ms-transform: scale(2);-moz-transform: scale(2); -webkit-transform: scale(2); -o-transform: scale(2);padding: 10px;" ></input></div></div></br>'); 
+										};
+									
+									};
+									
+								});
+								//save button
+								$( "#hamAccess" ).append( '<input type="button" name ="saveFilling" id="saveFilling" class="saveFilling" style="border-radius: 5px;position:relative;background:#a5ff87;padding:10px;text-align:center;transition: background 1s;width:100%;"></input><div style="z-index:100;position:relative;top:-33px;left:112px;font-weight:bold;font-size:150%-ms-user-select: none; -moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;user-select: none;pointer-events: none;">Save</div>');
+							}, 100);
+						}, 200);
+				}else{
+				
+					$('#status'+selectedKey+'').css('background',' #fc2836');
+					$('#statusText'+selectedKey+'').html('Please Enter a Valid Password');
+					
+				};
+						
+				
+			}, 1000);
+			
+		});
+		
+		$('#fillingPage').on('click', '#saveFilling', function (event) { //Save Process -SF1-
+			
+			prepareLoopCounter = 0;
+			console.log("Calling pre-save array for correct input save location - "+ValueBoxArray); //borrow from ajax up there
+			
+			$( "#fillingPage" ).append( '<div name ="loadBlack" id="loadBlack" style="position:fixed;background:#000000;width:100%;height:100%;z-index:10000; opacity: 0.8;"></div>');
+			console.log("Save event fired!!");
+		
+			setTimeout(function(){ 
+				$( "#loadBlack" ).append( '<div name ="savingProgress" id="savingProgress" style="position:fixed;background:#7dff56;width:350px;height:100px;z-index:10000;top:50%;left:40%;border-radius:5px;"><p id="savingProgressText"style="position:relative;left:111px;top:19px;font-size:250%;font-weight:bold;">Saving..</p></div>');	
+				
+				for(var i=0;i<TypeBoxArray.length;i++){
+				
+					if(prepareTypeArray[i]==0){
+						arrayInputSave[i]=$("#quickInput"+i+"").val();		
+					}else if(prepareTypeArray[i]==1){
+						arrayInputSave[i]=$("#quickInput"+i+"").prop('checked');	
+					};
+				};
+				
+				$.each(OwnerBoxArray, function(i,itemX) {
+								
+								if (itemX == logInTokenWho){ //merge input back into main array for saving back into
+									
+									//prepareValueArray[prepareLoopCounter] = ValueBoxArray[i];
+									//ValueBoxArray[prepareLoopCounter] = arrayInputSave
+									
+									ValueBoxArray[i] = arrayInputSave[prepareLoopCounter];
+									
+									prepareLoopCounter = prepareLoopCounter + 1;
+								};
+								
+								
+								
+							});
+				
+				
+				
+			}, 100);
+			
+			setTimeout(function(){ 
+				$( "#savingProgressText" ).html( 'Saving...');		
+				console.log("arrayInputSave --"+arrayInputSave);
+				
+				console.log("Calling post-save input array - "+ValueBoxArray); //borrow from ajax up there
+				
+			}, 1000);
+			setTimeout(function(){ 
+				$( "#savingProgressText" ).html( 'Saving....');		
+
+				//-SF2-
+				console.log("---Preparing For Saving...Fetching neccesary variable-----");
+				console.log("selectedKey --"+selectedKey);
+				console.log("TypeBoxArray Lenght-to measure number of box ---"+TypeBoxArray.length);
+				console.log("---Done..Firing Post-----");
+				$.post('php/filling_saveProcess.php',{itemTarget:('item'+selectedKey),arrayInputSave:ValueBoxArray},function(data){	});	
+					
+			}, 1500);
+			setTimeout(function(){ 
+				$( "#savingProgressText" ).html( 'Saving....');			
+			}, 2000);
+			setTimeout(function(){ 
+				$( "#savingProgressText" ).html( 'Saving.....');			
+			}, 2500);
+			setTimeout(function(){ 
+				$( "#loadBlack" ).remove();
+				clearPage();
+				reloadHomePage();
+			}, 3000);
+		});
+		$('#homePage').on('click', '.enter', function (event) { //when Clicked on forms List -E1-
+			selectedKey2 = event.target.id;
+			selectedKey2 = selectedKey2.split('enter')[1];
+			$("#admission_form_2").show();
+			$('#textBoxLayerSpecial2').html("");
+			
+			//alert(event.target.id);
+			//$.get( "http://localhost/kw1TempServer/Store%20Data/Category/"+event.target.id , function( dataX ) { 
+								//var resourcefetched = dataX;
+							    //var arrayTargetedForms = resourcefetched.split('\r\n');
+								//console.log("Name of enter forms is - "+arrayTargetedForms[1]);
+								
+								//});
+				
+					$( "#homePage" ).append( '<div name ="loadBlack" id="loadBlack" style="position:fixed;background:#000000;width:100%;height:100%;z-index:10000; opacity: 0.8;top:0%;left:0%;"></div>');
+
+					
+				
+					
+					setTimeout(function(){
+							
+							$( "#loadBlack" ).append( '<div name ="deleteingProcess" id="deleteingProcess" style="position:fixed;background:#7dff56;width:350px;height:100px;z-index:10000;top:50%;left:40%;border-radius:5px;"><p id="deletingProgressText"style="position:relative;left:106px;top:19px;font-size:250%;font-weight:bold;">Loading..</p></div>');	
+							
+							
+					}, 100);
+					setTimeout(function(){ 	
+							$( "#deletingProgressText" ).html( 'Loading...');
+					}, 1000);
+					setTimeout(function(){ 	
+							$( "#deletingProgressText" ).html( 'Loading....');	
+							
+					
+					
+					
+					
+					
+					
+					
+					$('#textBoxLayerSpecial').html("");
+						setTimeout(function(){ //loop for iName corresponding to key
+							$.ajax({
+										type : 'GET',
+										dataType: 'json',
+										url : "/kw1TempServer/Senior%20Project%20KW%20Demo/php/jsonFile.json",
+										success : function(data) {
+										   console.log("-------------------initiating view mode---------------");
+										   targetingItem = 0;
+										   XBoxArray = [];
+										   YBoxArray = []; 
+										   LenghtBoxArray = [];
+										   OwnerBoxArray = [];
+										   CommentBoxArray = [];
+										   TextBoxArray = [];
+										   TypeBoxArray = [];
+										   
+										   ValueBoxArray =[];
+										   
+										   $.each(data,function(index,data){
+												console.log("-Key check------ "+targetingItem+" with "+selectedKey2+"------");
+												if(targetingItem == selectedKey2){
+													console.log("item editing is - "+data.iName);
+													XBoxArray = data.iArrayX;
+													
+													YBoxArray = data.iArrayY;
+													LenghtBoxArray = data.iArrayLenght;
+													OwnerBoxArray = data.iArrayOwner;
+													CommentBoxArray = data.iArrayComment;
+													TypeBoxArray = data.iArrayType;
+													ValueBoxArray = data.iArrayInputSave;
+													$("#admission_form_2").attr("src",data.iPicLink);
+													console.log("Fecting data.Piclink....- "+data.iPicLink);
+												};
+												
+												targetingItem = targetingItem + 1;
+												
+										   });
+										   
+										   //alert("IT SUCCESS...");
+										},
+										error:function(data){
+										//if error
+											alert("something happen to JSON file");
+										}
+							});
+						
+						}, 400);
+						
+						setTimeout(function(){ //decide which text box is required for this token
+							
+							
+							
+							prepareXArray = [];
+							prepareYArray  = [];
+							prepareLenghtArray  = [];
+							prepareCommentArray  = [];
+							prepareValueArray  = [];
+							prepareTypeArray = [];
+							
+							prepareLoopCounter = 0;
+							console.log("wanted X set_Pre insertion - "+prepareXArray);
+							
+							
+							$.each(OwnerBoxArray, function(i,itemX) {
+								//wtf is this console.log('Found - '+itemX);
+								
+									prepareXArray[prepareLoopCounter] = XBoxArray[i];
+									prepareYArray[prepareLoopCounter] = YBoxArray[i];
+									prepareLenghtArray[prepareLoopCounter] = LenghtBoxArray[i];
+									prepareCommentArray[prepareLoopCounter] = CommentBoxArray[i];
+									prepareTypeArray[prepareLoopCounter] = TypeBoxArray[i];
+									
+									prepareValueArray[prepareLoopCounter] = ValueBoxArray[i];
+									
+									prepareLoopCounter = prepareLoopCounter + 1;
+								
+								
+								
+								
+							});
+							
+							
+							setTimeout(function(){  // -E2- After Filtered what box is wanted
+								console.log("----Prepare for Filling Page----------");
+								console.log("wanted X set - "+prepareXArray);
+								console.log("wanted Y set - "+prepareYArray);
+								console.log("wanted Lenght set - "+prepareLenghtArray);
+								console.log("wanted Comment set - "+prepareCommentArray);
+								console.log("wanted Type set - "+prepareTypeArray);
+								console.log("wanted saved input set - "+prepareValueArray);
+								$.each(prepareXArray, function(i,itemX) {
+									textBoxLenghtIsVar2 = prepareLenghtArray[i];
+									//console.log("Deciding Text-Box or Check-Box..."+prepareTypeArray[i]);
+									
+									var x = prepareXArray[i];
+									var y = prepareYArray[i];
+										
+									x2 = prepareXArray[i];
+									y2 = prepareYArray[i];
+										
+									if(prepareTypeArray[i]==0){ //if Text Box Type-for overlay paper--------------------------
+										
+										var comment = prepareCommentArray[i];
+										var saveValue = prepareValueArray[i];
+										//var test = [x,y];
+										
+										//console.log("test array is - "+test);
+										if (textBoxLenghtIsVar2 >= 3) {
+											textBoxSize2 = textBoxLenghtIsVar2-2;
+											console.log("TextBoxSize2 is - "+textBoxSize2);
+										}else{
+											textBoxSize2 = 1;
+											console.log("TextBoxSize2 is - "+textBoxSize2);
+										}
+										if(saveValue!=null){ //Fixed crude way
+											if (saveValue != ""){ // lol
+											console.log("now save value is "+saveValue);
+											var img = $('<input id="fillingText'+i+'" class="fillingTextBox" type="text"  placeholder="'+comment+'" maxlength="'+textBoxLenghtIsVar2+'" size="'+textBoxSize2+'" value="'+saveValue+'"  style="background-color: transparent;outline: none; border:none" readonly/>');
+											}else{
+											
+											var img = $('<input id="fillingText'+i+'" class="fillingTextBox" type="text"  placeholder="'+comment+'" maxlength="'+textBoxLenghtIsVar2+'" size="'+textBoxSize2+'"  style="background-color: transparent;outline: none; border:none" readonly/>');
+											
+											}
+										}else{
+											var img = $('<input id="fillingText'+i+'" class="fillingTextBox" type="text"  placeholder="'+comment+'" maxlength="'+textBoxLenghtIsVar2+'" size="'+textBoxSize2+'"  style="background-color: transparent;outline: none; border:none"  readonly/>');
+										};
+										
+										
+										var div = $('<div id="fillingBox'+i+'" >').css({
+											"position": "absolute",                    
+											"left": y,
+											"top": x,//miscalculation - must swap
+											"z-index":100	
+										});
+										
+										div.append(img);
+										
+										
+										$("#textBoxLayerSpecial2").append(div);  
+										
+									};
+									
+									if(prepareTypeArray[i]==1){ //If Check Box Type - overlay-----------------
+									
+										var saveValue = prepareValueArray[i];
+										console.log("saveValue for checkbox is -"+saveValue);
+										if (saveValue=="true"){//checked is the key
+											var img = $('<input id="fillingCheck'+i+'"  class ="fillingCheckBox" type="checkbox" checked  style="-ms-transform: scale(2);-moz-transform: scale(2); -webkit-transform: scale(2); -o-transform: scale(2);padding: 10px;" onclick="return false;"/>');
+										}else{
+											var img = $('<input id="fillingCheck'+i+'"  class ="fillingCheckBox" type="checkbox"   style="-ms-transform: scale(2);-moz-transform: scale(2); -webkit-transform: scale(2); -o-transform: scale(2);padding: 10px;" onclick="return false;"/>');
+										};
+										
+						
+										var div = $('<div id="fillingBox'+i+'" >').css({
+											"position": "absolute",                    
+											"left": y2,
+											"top": x2,
+											"z-index":100
+											
+										});
+										div.append(img);
+										console.log("Making Check box with"+y2+x2);
+										$('#textBoxLayerSpecial2').append(div);   //quickaccess checkbox addd------------
+										
+									
+									};
+									
+								});
+								//save button
+								
+							}, 100);
+							$( "#loadBlack" ).remove();	
+							
+							
+							clearPage();	
+							$("#convertToPic").show();
+							$("#linkTheForm").show();
+							$('#fillingPage').children().show();
+							$("#hamAccess").hide();
+						}, 700);
+						
+				}, 1500);
+		});
+		
+		$('#nav-newF').click(function() //New function which lead to editor page
+			{
+				tutImgSrc = "myPic/addnewform.png";
+				$( "#fillingPage" ).append( '<div name ="loadBlack" id="loadBlack" style="position:fixed;background:#000000;width:100%;height:100%;z-index:10000; opacity: 0.8;top:0%;left0%;"></div>');
+				
+				
+				setTimeout(function(){
+					$( "#loadBlack" ).append( '<div name ="newPageProgress" id="newPageProgress" style="position:fixed;background:#7dff56;width:350px;height:100px;z-index:10000;top:50%;left:40%;border-radius:5px;"><p id="newPageProgressText"style="position:relative;left:105px;top:19px;font-size:250%;font-weight:bold;">Loading..</p></div>');	
+				
+				}, 1000);
+				setTimeout(function(){
+					$( "#newPageProgressText" ).html( 'Loading...');	
+				}, 1500);
+				setTimeout(function(){
+					$( "#loadBlack" ).remove();
+					clearPage();
+				
+					addTextBoxMode = 0;
+					textBoxClicked = 0;
+					
+					$('#editorPage').children().show();
+					$('#section1').children().show();
+					
+					$("#textBoxLayerSpecial").html(""); 
+					$('#textBoxLayerSpecial2').html("");
+					
+					$('#leftImport').hide();
+					$('#rightExist2').hide();
+					$('#section2').hide();
+					$('#section3').hide();
+					$('#section4').hide();
+					$('#confirmNew').hide();
+					
+					
+					$('#sec2subAdd').html(''); //Proper Reset
+					$('#numberOfApprover').show();
+					$('#doneWithApprover').show();
+					$('#sec2p1').html('Enter the number of Approver');
+				}, 2000);
+			
+				
+			});
+			
+		$('#nav-Tut').click(function() //New function which lead to tutorial
+			{
+				$( "#homePage" ).append( '<div name ="loadBlack" id="loadBlack" style="position:fixed;background:#000000;width:100%;height:100%;z-index:10000; opacity: 1;top:0%;left:0%;"></div>');
+
+					
+				
+					
+					setTimeout(function(){
+							
+							$( "#loadBlack" ).append( '<div name ="deleteingProcess" id="deleteingProcess" style="position:fixed;background:#aaff8e;width:90%;height:90%;z-index:10000;top:5%;left:5%;border-radius:5px;"><img src="'+tutImgSrc+'" style="position:relative;width:80%;height:80%;border-radius:5px;left:8%;top:8%"></div>');	
+							
+							$( "#loadBlack" ).append( '<input type="image" id="backToFirst3" name="backToFirst" src="myPic/previous.png" style="position:fixed;width:80px;height:80px;left:8%;top:8%;z-index:10001;"/>');
+				
+					}, 100);
+			});
+		$(document).on('click', '#backToFirst3', function (event) { //step 2 of saving in section4 -S2-
+			console.log("loadBlack removed");
+			$( "#loadBlack" ).remove();
+		});			
+			
+		$('#nav-home').click(function() //New function which lead to editor page
+		{
+				clearPage();
+				reloadHomePage();
+				$("#textBoxLayerSpecial").html(""); 
+				
+		});
+		$('#leftNew').click(function()	
+			{
+				  $( "#leftNew" ).fadeOut( "slow", function() {
+					// Animation complete.
+				  });
+				  setTimeout(function(){ $( "#leftImport" ).fadeIn( "slow", function() {
+					// Animation complete
+				  }); }, 1000);
+				  
+			});
+			
+		$('#saveFin').click(function()	 //save to 1st step -S1-
+			{
+				$("#section3").fadeOut( "slow", function() {
+					// Animation complete.
+				  });
+				$("#section4").show();
+				$("#section4").children().show();
+				$("#textBoxLayerSpecial").html(""); 
+				
+				console.log("-----Saving to content index X -prep -------------")
+				
+				for(var i=0;i<numberOfTextBox;i++){
+					
+					setOfInput[i]="";
+					console.log("Loop def run! - "+i);
+					
+				};
+				setTimeout(function(){ 
+					console.log("setOfInput is - "+setOfInput);
+					//console.log("Existed file clicked...loading.....");
+					$("#newListPanel").html("");
+					$.ajax({
+								type : 'GET',
+								dataType: 'json',
+								url : "/kw1TempServer/Senior%20Project%20KW%20Demo/jsonData/existedFormsTest.json",
+								success : function(data) {
+								   //if successfull           
+								   ////console.log(data.c1.cName);
+								   $.each(data,function(i,subData){
+								   
+										//console.log("Fecting success - "+subData.cName)
+										$( "#newListPanel" ).append( '<div name ="'+subData.cName+'"id="'+subData.cId+'" class="categoryList2"><div id="'+subData.cId+'"style="position:relative;"><img src="myPic/merge.png" style="height:20px;width:20px;">'+subData.cName+'</div></div>&nbsp'); 	
+
+								   });
+								   
+								   //alert("IT SUCCESS...");
+								},
+								error:function(data){
+								//if error
+									alert("something happen to JSON file");
+								}
+					});
+					
+					}, 1100);
+				 
+				 
+			});
+			
+			
+		  $('#saveMainPanel').on('click', '.categoryList2', function (event) { //step 2 of saving in section4 -S2-
+			
+			
+				  
+				  
+			setTimeout(function(){ 
+				$("#newListPanel").html("");
+				
+				
+				var urlTarget2 = "/kw1TempServer/Senior%20Project%20KW%20Demo/jsonData/"+event.target.id+"/content%20index.json";
+				console.log("New floder category URL is... - "+urlTarget2);
+				//ajax removed
+				//preparing data for POST
+					
+					
+					
+					
+					//numOfApprover - defaultPassword - setOfApproverName - setOfApproverPassword - numberOfTextBox - setOfX - setOfY - setOfLenght - setOfOwner -setOfComment
+					
+					setOfApproverName = [];
+					setOfApproverPassword = [];
+					if(numberOfApproverVar>0){ // -S3-
+					
+						for(var i=0;i<numberOfApproverVar;i++){
+						
+							setOfApproverName[i] = $('#approverName'+i+'').val();
+							setOfApproverPassword[i] = $('#approverPassword'+i+'').val();
+						};
+					};
+				
+					console.log("----final array-----------------------------");
+					console.log("0lol - Form Name - "+$('#formName').val());
+					console.log("1st - # of approver is - "+$('#numberOfApprover').val());
+					console.log("2nd - default password - "+$('#defaultPassword').val());
+					console.log("3rd - array of approver name - "+setOfApproverName);
+					console.log("4th - array of approver password- "+setOfApproverPassword);
+					
+					console.log("5th - Number Of textbox is - "+numberOfTextBox);
+					console.log("6th - set X px Of textbox is - "+setOfX);
+					console.log("7th - set y px Of textbox is - "+setOfY);
+					console.log("8th - set Lenght Of textbox is - "+setOfLenght);
+					console.log("9th - set Owner ID Of textbox is - "+setOfOwner);
+					console.log("10th - set of Comment of textbox is - "+setOfComment);
+					console.log("11st- set of type is - "+setOfType);
+					console.log("12nd set of default input is - "+setOfInput);
+					console.log("13rd Link of picture - "+uploadedPicName);
+					
+					//textBoxNo = textBoxNo+1;
+					indexNowHave = 0;
+					$.ajax({ //count category to insert at last one
+								type : 'GET',
+								dataType: 'json',
+								url : urlTarget2,
+								success : function(data) {
+								   //if successfull           
+								   ////console.log(data.c1.cName);
+								   $.each(data,function(i,subData){
+								   
+										//console.log("Fecting success - "+subData.cName)
+										indexNowHave = indexNowHave+1;
+										console.log("indexNowHave-"+indexNowHave);	
+								   });
+								   
+								   //alert("IT SUCCESS...");
+								},
+								error:function(data){
+								//if error
+									alert("something happen to JSON file");
+								}
+					});
+					setTimeout(function(){ 
+						//console.log("extra - Index now have "+indexNowHave+" -> so we insert at "+(indexNowHave+1));
+						indexNowHave2 = "f" + indexNowHave;
+						approverNum = $('#numberOfApprover').val();
+						defPassword = $('#defaultPassword').val();
+						formName = $('#formName').val();
+						
+						urlToSave = '..\\jsonData\\'+event.target.id+'\\content index.json';
+						
+					}, 200);
+					
+					
+					
+					
+					setTimeout(function(){
+						console.log("extra - Index now have Formatted - "+indexNowHave2);
+						console.log("urlTosave is - "+urlToSave);
+						$.post('php/newForm_saveProcess.php',{itemTarget:indexNowHave2,urlToSave:urlToSave,formName:formName,approverNum:approverNum,defPassword:defPassword,arrayName:setOfApproverName,arrayPassword:setOfApproverPassword,numTextBox:numberOfTextBox,arrayX:setOfX,arrayY:setOfY,arrayLenght:setOfLenght,arrayOwner:setOfOwner,arrayComment:setOfComment,arrayType:setOfType,arrayInput:setOfInput,uploadedPicName:uploadedPicName},function(data){	
+						});	
+					}, 400);
+					$("#section4").children().hide();
+					$("#editorPage").children().hide();
+					
+					console.log("----final array------------------------------");
+				
+			}, 500);
+		setTimeout(function(){ 
+				clearPage();
+				reloadHomePage();
+				
+			}, 1000);
+		});
+			
+		$('#rightExist1').click(function()	 //1st step of exist forms clicked
+			{
+				$( "#rightExist1" ).fadeOut( "slow", function() {
+					// Animation complete.
+				  });
+				setTimeout(function(){ $( "#rightExist2" ).fadeIn( "slow", function() {
+					// Animation complete
+				  }); }, 1000);
+				  
+				  
+				setTimeout(function(){ 
+					//console.log("Existed file clicked...loading.....");
+					$("#rightExist2Content").html("");
+					//$("#editorPage").append('<div name="objectiveHelper" id="objectiveHelper" style="position:fixed;width:390px;height:35px;background:#7dff56;left:890px;top:230px;border-radius:5px"><p id="objectiveHelperText"style="position:relative;left:50px;top:9px;font-size:110%;font-weight:bold;">Choose Category  </p></div>');
+					
+					$( "#editorPage" ).append( '<div name ="objectiveHelper" id="objectiveHelper" style="position:fixed;background:#7dff56;width:100%;height:50px;z-index:100000;top:-360px;left:630px;border-radius:5px;"><p id="objectiveHelperText"style="position:relative;left:105px;top:19px;font-size:250%;font-weight:bold;">Objective is</p></div>');	
+					$("#editorPage").append('<div name ="objectiveHelper" id="objectiveHelper" style="position:fixed;background:#7dff56;width:100%;height:50px;z-index:100000;top:-360px;left:630px;border-radius:5px;">');
+					$.ajax({
+								type : 'GET',
+								dataType: 'json',
+								url : "/kw1TempServer/Senior%20Project%20KW%20Demo/jsonData/existedFormsTest.json",
+								success : function(data) {
+								   //if successfull           
+								   ////console.log(data.c1.cName);
+								   $.each(data,function(i,subData){
+								   
+										//console.log("Fecting success - "+subData.cName)
+										$( "#rightExist2Content" ).append( '<div name ="'+subData.cName+'"id="'+subData.cId+'" class="categoryList"><div id="'+subData.cId+'"style="position:relative;top:10px;"><img src="myPic/merge.png" style="height:20px;width:20px;">'+subData.cName+'</div></div>&nbsp'); 	
+										
+
+								   });
+								   
+								   //alert("IT SUCCESS...");
+								},
+								error:function(data){
+								//if error
+									alert("Invalid JSON file");
+								}
+					});
+					
+				 }, 1100);
+				 
+				 
+			});
+			
+			
+			
+    
+        $('#rightExist2Content').on('click', '.categoryList', function (event) { //2nd step - When clicked on category list
+			
+			
+			//targetingCategory=targetCategory[0];
+			//setTimeout(function(){ //console.log("Targeting category : "+targetingCategory);}, 100);
+			////console.log("Category 00 Clicked");
+			//alert(event.target.id);
+			$( "#rightExist2Content" ).fadeOut( "slow", function() {
+					// Animation complete
+			}); 
+				  
+				  
+			setTimeout(function(){ 
+				$("#rightExist2Content").html("");
+				//$("#editorPage").append('<input type="image" id="backToFirst2" name="backToFirst" src="myPic/previous.png" style="position:relative;width:35px;height:35px;left:620px;top:-360px"/>');
+				nowCategory = event.target.id;
+				console.log("nowCategory is - "+nowCategory);
+				var urlTarget1 = "/kw1TempServer/Senior%20Project%20KW%20Demo/jsonData/"+event.target.id+"/content%20index.json";
+				
+				$.ajax({
+								type : 'GET',
+								dataType: 'json',
+								url : urlTarget1,
+								success : function(data) {
+								   //if successfull           
+								   ////console.log(data.c1.cName);
+								   //console.log("Clicked category..."+data.f1.fName);
+								   $.each(data,function(i,subData){
+								   
+										//console.log("Fecting success - "+subData.fName)
+										$( "#rightExist2Content" ).append( '<div name ="'+subData.fName+'"id="'+subData.fName+'" class="formList"><div id="'+subData.fName+'"style="position:relative;top:10px;"><img src="myPic/merge.png" style="height:20px;width:20px;">'+subData.fName+'</div></div><input type="image" name ="Edit-'+subData.cName+'"id="E'+subData.cId+'" class="categoryListEdit" src="myPic/pencil.png" style="position:relative;left:207px;bottom:38px;width:35px;height:35px;" ></input>&nbsp'); 	
+
+								   });
+								   //alert("IT SUCCESS...");
+								},
+								error:function(data){
+								//if error
+									alert("Invalid JSON file");
+								}
+					});
+				
+				
+			}, 500);
+			
+			
+			
+			setTimeout(function(){ 
+					$( "#rightExist2Content" ).fadeIn( "slow", function() {
+					// Animation complete
+				  }); 
+				$( "#objectiveHelperText" ).html("Please Choose your desired Form");
+			}, 1000);
+		});
+		
+		$('#rightExist2Content').on('click', '.formList', function (event) { //3rd step - when Clicked on forms List
+			
+			//alert(event.target.id);
+			targetForm = event.target.id;
+			//console.log("TargetForm is - "+targetForm);
+			
+			
+			$( "#editorPage" ).append( '<div name ="loadBlack" id="loadBlack" style="position:fixed;top:0%;left:0%;background:#000000;width:100%;height:100%;z-index:10000; opacity: 0.8;"></div>');
+
+			
+			setTimeout(function(){
+			
+				$( "#loadBlack" ).append( '<div name ="loadingProgress" id="loadingProgress" style="position:fixed;background:#7dff56;width:350px;height:100px;z-index:10000;top:50%;left:40%;border-radius:5px;"><p id="loadingProgressText"style="position:relative;left:105px;top:19px;font-size:250%;font-weight:bold;">Loading..</p></div>');	
+			}, 100);
+			setTimeout(function(){
+				$( "#loadingProgressText" ).html( 'Loading...');	
+			}, 200);			
+			setTimeout(function(){
+				$( "#loadingProgressText" ).html( 'Loading....');
+			}, 300);
+			
+			
+			
+			
+			
+			setTimeout(function(){ 
+				var urlTarget3 = "/kw1TempServer/Senior%20Project%20KW%20Demo/jsonData/"+nowCategory+"/content%20index.json";
+				$.ajax({ // -L1-
+								type : 'GET',
+								dataType: 'json',
+								url : urlTarget3,
+								success : function(data) {
+								   
+								   $.each(data,function(index,value){
+										console.log("Loop number # "+index+"....at -"+value.fName);
+										if (value.fName == targetForm){
+											
+											gFormName = value.fFormName;
+											gApproverNum = value.fApproverNum;
+											gDefPassword = value.fDefPassword;
+											gArrayName = value.fArrayName;
+											gArrayPassword = value.fArrayPassword;
+											gNumTextBox = value.fNumTextBox;
+											gArrayX = value.fArrayX;
+											gArrayY = value.fArrayY;
+											gArrayLenght = value.fArrayLenght;
+											gArrayOwner = value.fArrayOwner;
+											gArrayComment = value.fArrayComment;
+											gArrayType = value.fArrayType;
+											gArrayInput = value.fArrayInputSave;
+											gPicLink = value.fPicLink;
+											
+											
+											console.log("Fecting Name - "+gFormName);
+											console.log("Fecting App Num- "+gApproverNum);
+											console.log("Fecting Def Pass- "+gDefPassword);
+											console.log("Fecting Array Name- "+gArrayName);
+											console.log("Fecting Array Pas.- "+gArrayPassword);
+											console.log("Fecting #Text Box- "+gNumTextBox);
+											console.log("Fecting X Set- "+gArrayX);
+											console.log("Fecting Y Set- "+gArrayY);
+											console.log("Fecting Lenght Set- "+gArrayLenght);
+											console.log("Fecting Owner Set- "+gArrayOwner);
+											console.log("Fecting Comment Set- "+gArrayComment);
+											console.log("Fecting Type Set- "+gArrayType);
+											console.log("Fecting default Input Set- "+gArrayInput);
+											console.log("Fecting picture link- "+gPicLink);
+										};	
+								   });
+								   
+								   
+								},
+								error:function(data){
+								//if error
+									alert("Invalid JSON file");
+								}
+				});	
+				
+			
+				$( "#loadBlack" ).remove();
+			
+			},300);
+				
+			
+			setTimeout(function(){ 
+			
+			
+			$("#backToFirst2").remove(); 
+			clearPage();
+			
+			//console.log("nowHaveItemCount - "+nowHaveItemCount);
+			toString= nowHaveItemCount.toString();
+			
+			itemTarget = "item"+toString;
+			////console.log("numberOfFile is - "+numberOfFile);
+			
+			homeTablePath = 'http://localhost/kw1TempServer/Senior%20Project%20KW%20Demo/jsonData/homeTable.json'; //not use anymore
+			homeTablePathWrite = '/jsonData/homeTable.json'; //not use anymore
+			
+				////console.log(encodeURI(nowCategory+"/"+targetForm));
+				//$( "#Item0"+toString ).append("<div id='examplePanel01' class='examplePanel01'><input type='image' id='formIcon' name='formIcon' src='myPic/forms.png' style='width:130px;height:130px;left:20px;position:relative;'  /><p style='text-align:center;' ><font color='#BBBBBB'>"+targetForm+"</font></p></div><div id='examplePanel02' class='examplePanel02'><input type='image' id='cross' class='delete' name='cross' src='myPic/cross.png' style='border-radius: 5px;width:30px;height:30px;left:-20px;top:-18px;position:relative;'  /><input type='image' id='copy' name='copy' src='myPic/copy.png' style='border-radius: 5px;width:30px;height:30px;left:-20px;top:-18px;position:relative;'  /></div><div id='examplePanel03' class='examplePanel03'><input type='image' id='"+encodeURI(nowCategory)+"/"+encodeURI(targetForm)+".txt' name='enter' src='myPic/search.png' class='enter' style='border-radius: 10px;width:43px;height:43px;left:-20px;top:-16px;position:relative;'  /><input type='image' id='edit' name='edit' src='myPic/pencil.png' style='border-radius: 5px;width:40px;height:40px;left:-20px;top:-18px;position:relative;'  /><input type='text' id='password01'name='password01' style='border-radius: 5px;width:110px;height:40px;left:70px;top:-78px;position:relative;'><input type='image' id='key"+toString+"' name='key' class='key' src='myPic/key.png' style='border-radius: 5px;width:40px;height:40px;left:72px;top:-63px;position:relative;'  /><div id='status' class='status'><p id='statusText' name='status text' style='position:relative;left:15px;top:-10px;'> Logged in as Student</p></div></div>");		
+					
+				
+				$.post('php/home_saveProcess.php',{ itemName:targetForm,itemTarget:itemTarget,gFormName:gFormName,gApproverNum:gApproverNum,gDefPassword:gDefPassword,gArrayName:gArrayName,gArrayName:gArrayName,gArrayPassword:gArrayPassword,gNumTextBox:gNumTextBox,gArrayX:gArrayX,gArrayY:gArrayY,gArrayLenght:gArrayLenght,gArrayOwner:gArrayOwner,gArrayOwner:gArrayOwner,gArrayComment:gArrayComment,gArrayType:gArrayType,gArrayInputSave:gArrayInput,gPicLink:gPicLink},function(data){	
+				});	
+			reloadHomePage();
+			},1000);
+			
+		});
+		
+				 $('#newFormPreview').click(function(e){
+					if(addTextBoxMode==1){
+						if(textBoxClicked == 0){
+							textBoxClicked = 1;
+							setTimeout(function(){ $( "#editorPanelBox" ).fadeIn( "slow", function() {
+								// Animation complete
+							}); }, 100);
+							setTimeout(function(){ $( "#editorPanelBox" ).children().fadeIn( "slow", function() {
+								// Animation complete
+							}); }, 100);
+							textBoxLenghtIsVar = $('#textBoxLenghtIs').val();
+							
+							var x = e.pageX + 'px';
+							var y = e.pageY + 'px';
+							
+							//console.log("test array is - "+test);
+							if (textBoxLenghtIsVar >= 3) {
+								textBoxSize = textBoxLenghtIsVar-2;
+								//console.log("TextBoxSize is - "+textBoxSize);
+							}else{
+								textBoxSize = 1;
+								//console.log("TextBoxSize is - "+textBoxSize);
+							}
+							
+							var img = $('<input id="workingOnText" class"formTextBox" type="text" maxlength="'+textBoxLenghtIsVar+'" size="'+textBoxSize+'"  style="background-color: transparent;border-color:#53f442;color:#7c7c7c;"/>');
+							var div = $('<div id="workingOn" >').css({
+								"position": "absolute",                    
+								"left": x,
+								"top": y,
+								"z-index":100
+								
+							});
+							div.append(img);
+							$('#textBoxLayerSpecial').append(div);  
+							//addTextBoxMode = 0;
+							
+							workingOnX = x;
+							workingOnY = y;
+							//saving data
+							console.log("textBoxLenght is - "+textBoxLenghtIsVar);
+							console.log("x is - "+workingOnX);
+							console.log("y is - "+workingOnY);
+						};
+					};						
+				});      
+		
+				$('#newFormPreview').click(function(e){
+					if(addTextBoxMode==2){
+						if(textBoxClicked == 0){
+							textBoxClicked = 1;
+							setTimeout(function(){ $( "#editorPanelBox" ).fadeIn( "slow", function() {
+								// Animation complete
+							}); }, 100);
+							setTimeout(function(){ $( "#editorPanelBox" ).children().fadeIn( "slow", function() {
+								// Animation complete
+							}); }, 100);
+							
+							setTimeout(function(){ 
+								$('#textBoxLenghtIs').hide();
+							},110);
+							
+							
+							var x = e.pageX + 'px';
+							var y = e.pageY + 'px';
+							
+						
+							
+							
+							var img = $('<input id="workingOnText" class"formTextBox" type="checkbox" style=" /* Double-sized Checkboxes */ -ms-transform: scale(2);-moz-transform: scale(2); -webkit-transform: scale(2); -o-transform: scale(2);padding: 10px;"/>');
+							var div = $('<div id="workingOn" style="opacity: 0.7;">').css({
+								"position": "absolute",                    
+								"left": x,
+								"top": y,
+								"z-index":100
+								
+							});
+							div.append(img);
+							$('#textBoxLayerSpecial').append(div);  
+							//addTextBoxMode = 0;
+							
+							workingOnX = x;
+							workingOnY = y;
+							//saving data
+							
+							console.log("checkbox x is - "+workingOnX);
+							console.log("checkbox y is - "+workingOnY);
+						};
+					};						
+				});  
+		clearPage(); //Initialize the page
+		reloadHomePage();
+		//testfileCarriage("http://localhost/kw1TempServer/Store%20Data/fileCategory.txt");
+		//End of Initialized Fucntion Area
+		//----------------------------------------------------------------------
+		
+		
+		
+	});
+	
+	</script>
+	
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+
+</body>
+
+</html>
